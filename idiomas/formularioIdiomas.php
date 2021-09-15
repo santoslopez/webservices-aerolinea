@@ -47,7 +47,7 @@
 
         <div class="mb-4">
 				<label for="labelNombreIdioma" class="form-label">Nombre idioma</label>
-				<input type="text" class="form-control" aria-describedby="nameIdiomas" name="txtNameIdiomas" required placeholder="Ingresa el idioma" >
+				<input type="text" class="form-control" minlength="1" maxlength="20" aria-describedby="nameIdiomas" name="txtNameIdiomas" required placeholder="Ingresa el idioma" >
 			</div>			
            
           <div class="d-grid">

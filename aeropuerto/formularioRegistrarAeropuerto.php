@@ -42,22 +42,22 @@
         
         <div class="mb-4">
 				<label for="labelCodigoAeropuerto" class="form-label">Código aeropuerto</label>
-				<input type="text" class="form-control" aria-describedby="nameCodigoAeropuerto" name="txtNameCodigoAeropuerto" required placeholder="Ingresa el codigo del aeropuerto" >
+				<input type="text" class="form-control"  minlength="1" maxlength="3" aria-describedby="nameCodigoAeropuerto" name="txtNameCodigoAeropuerto" required placeholder="Ingresa el codigo del aeropuerto" >
 			</div>	
 
         <div class="mb-4">
 				<label for="labelNombreAeropuerto" class="form-label">Nombre aeropuerto</label>
-				<input type="text" class="form-control" aria-describedby="nameAeropuerto" name="txtNameAeropuerto" required placeholder="Ingresa el nombre del aeropuerto" >
+				<input type="text" class="form-control" minlength="1" maxlength="50" aria-describedby="nameAeropuerto" name="txtNameAeropuerto" required placeholder="Ingresa el nombre del aeropuerto" >
 			</div>	
       
       <div class="mb-4">
 				<label for="labelCiudadAeropuerto" class="form-label">Ciudad</label>
-				<input type="text" class="form-control" aria-describedby="nameCiudad" name="txtNameCiudad" required placeholder="Ingresa ciudad del aeropuerto" >
+				<input type="text" class="form-control" minlength="1" maxlength="50" aria-describedby="nameCiudad" name="txtNameCiudad" required placeholder="Ingresa ciudad del aeropuerto" >
 			</div>	
 
       <div class="mb-4">
 				<label for="labelPaisAeropuerto" class="form-label">Pais</label>
-				<input type="text" class="form-control" aria-describedby="namePais" name="txtNamePais" required placeholder="Ingresa pais del aeropuerto" >
+				<input type="text" class="form-control" minlength="1" maxlength="50" aria-describedby="namePais" name="txtNamePais" required placeholder="Ingresa pais del aeropuerto" >
 			</div>	
            
           <div class="d-grid">

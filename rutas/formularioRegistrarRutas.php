@@ -45,7 +45,7 @@
       
       <div class="mb-4">
 				<label for="labelCiudadAeropuerto" class="form-label">Tiempo vuelo</label>
-				<input type="number" class="form-control" aria-describedby="nameTiempoVuelo" name="txtTiempoVuelo" required placeholder="Ingresa tiempo de vuelo" >
+				<input type="number" step="0.01" class="form-control" aria-describedby="nameTiempoVuelo" name="txtTiempoVuelo" required placeholder="Ingresa tiempo de vuelo" >
 			</div>	
            
 			<div class="mb-4">
