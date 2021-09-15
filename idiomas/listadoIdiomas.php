@@ -1,21 +1,4 @@
-<!-- 
-    Archivo listadoIdiomas.php
-    Aqui mostramos el listado de los idiomas registrados. Tiene habilitado el registro, modificacion y eliminacion de datos.
--->
 
-
-<html lang="en">
-<head>
-    <!--meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado lenguas</title-->
-
-    <!-- Por medio de este archivo mostramos un mensaje de confirmacion para eliminar, actualizar datos.-->
-    <!--script src="js/mensajesPersonalizados.js" type="text/javascript"></script-->
-
-</head>
-<body>
     <?php 
     include 'conexion/conexion.php';    
     
@@ -63,23 +46,3 @@
     
     }
     ?> 
-
-
-    <!--script>
-		/* 
-      .opcionEliminarTiposEventos: corresponde al nombre de la propiedad "CLASS" que se le puso en el a href, dentro del while para mostrar los datos    
-    */
-		var nombreClassBotonEliminar = '.opcionEliminarLenguas';
-		mensajeEliminarContenido(nombreClassBotonEliminar,"Eliminar lenguas","Esto no se puede revertir","warning","Si, eliminar informacion.","../perfil/index.php");
-	</script-->
-
-	<!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <!--
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
--->
-
-</body>
-</html>
