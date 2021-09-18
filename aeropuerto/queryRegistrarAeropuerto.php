@@ -23,7 +23,7 @@
 	$ejecutarConsultaVerificarAeropuerto = pg_execute($conexion,"prepareVerificarAeropuerto",array($datosAeropuerto));
 
 	if (pg_num_rows($ejecutarConsultaVerificarAeropuerto)) {
-        alert("El idioma esta en uso");
+        alert("El Aeropuerto ya ha sido registrado");
 
 	}else {
 
