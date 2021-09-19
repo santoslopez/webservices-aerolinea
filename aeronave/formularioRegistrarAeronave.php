@@ -54,6 +54,10 @@
            
       <div class="d-grid">
         <button type="submit" class="btn btn-primary">Registrar Aeronave</button>
+      </div><br>
+
+      <div class="d-grid">
+          <a href="../index.php" class="btn btn-primary">Regresar atrás</a>       
       </div>
 
         </form>    

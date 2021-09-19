@@ -10,14 +10,9 @@
 
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 
-
-
     <title>Aerolinea</title>
-
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
 
-
-    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
       
@@ -36,13 +31,17 @@
     <link rel="stylesheet" href="css/style.css">
 
 
-
 </head>
-<body id="body-pd">
+<body id="body-pd" style="margin-top:7%;">
 
 
 
-    <a href="https://www.youtube.com/watch?v=C6227evfBig">Design</a><br>
+    <a href="https://www.youtube.com/watch?v=C6227evfBig" >Design</a><br>
+
+    <a href="https://flaticon.com" >Iconos</a><br>
+    <a href="https://boxicons.com/?query=bag" >Iconos menu</a><br>
+
+    
 
     <main class="main" style="width:95%;margin-right:10%;">
         <!--div id="contents" style="background: red;width:90%;margin-right:10%;"-->
@@ -164,8 +163,29 @@
                         Aeropuerto
                     </span>
                 </a>
+
+
+                
                 <div  class="nav nav-tabs nav__list" id="nav-tab" role="tablist">
-                    
+
+                    <!-- AERONAVE -->
+                    <a class="nav-link" id="rutas-tab" data-toggle="pill" href="#aeronave"  role="tab" aria-controls="aeronave" aria-selected="false">
+                        <i class='bx bxs-plane nav__icon'></i>
+                        <!--i class='bx bxs-plane-take-off nav__logo-icon'></i-->
+                        <span class="nav__name">
+                            Aeronave
+                        </span>
+                    </a>
+
+                    <a class="nav-link" id="aeropuerto-tab" data-toggle="pill" href="#aeropuerto"  role="tab" aria-controls="aeropuerto" aria-selected="false">
+                        <i class='bx bxs-plane-take-off nav__logo-icon'></i>
+                        <!--i class='bx bxs-plane-take-off nav__logo-icon'></i-->
+                        <span class="nav__name">
+                            Aeropuerto
+                        </span>
+                    </a>
+
+
                 <a class="nav-link" id="idiomas-tab" data-toggle="pill" href="#idiomas"  role="tab" aria-controls="idiomas" aria-selected="true" aria-label="Home">            
                     <i class='bx bxs-flag-alt nav__icon'></i>       
                     <span class="nav__name">
@@ -203,17 +223,9 @@
                        </a>  
 
                     
-                    <a class="nav-link" id="aeropuerto-tab" data-toggle="pill" href="#aeropuerto"  role="tab" aria-controls="aeropuerto" aria-selected="false">
-                        <i class='bx bxs-plane-take-off nav__logo-icon'></i>
-                        <!--i class='bx bxs-plane-take-off nav__logo-icon'></i-->
-                        <span class="nav__name">
-                            Aeropuerto
-                        </span>
-                    </a>
-
                     <!-- RUTAS-->
                     <a class="nav-link" id="rutas-tab" data-toggle="pill" href="#rutas"  role="tab" aria-controls="rutas" aria-selected="false">
-                        <i class='bx bxs-plane-take-off nav__logo-icon'></i>
+                        <i class='bx bxs-map nav__icon'></i>
                         <!--i class='bx bxs-plane-take-off nav__logo-icon'></i-->
                         <span class="nav__name">
                             Rutas
@@ -222,25 +234,16 @@
 
                     <!-- VIAJES -->
                     <a class="nav-link" id="rutas-tab" data-toggle="pill" href="#viajes"  role="tab" aria-controls="viajes" aria-selected="false">
-                        <i class='bx bxs-plane-take-off nav__logo-icon'></i>
+                        <i class='bx bxs-shopping-bags nav__icon'></i>
                         <!--i class='bx bxs-plane-take-off nav__logo-icon'></i-->
                         <span class="nav__name">
                             VIAJES
                         </span>
                     </a>
-                    <!-- AERONAVE -->
-                    <a class="nav-link" id="rutas-tab" data-toggle="pill" href="#aeronave"  role="tab" aria-controls="aeronave" aria-selected="false">
-                        <i class='bx bxs-plane-take-off nav__logo-icon'></i>
-                        <!--i class='bx bxs-plane-take-off nav__logo-icon'></i-->
-                        <span class="nav__name">
-                            Aeronave
-                        </span>
-                    </a>
-
 
                     <!-- BOLETOS AEREOS -->
                     <a class="nav-link" id="rutas-tab" data-toggle="pill" href="#boletosAereos"  role="tab" aria-controls="boletosAereos" aria-selected="false">
-                        <i class='bx bxs-plane-take-off nav__logo-icon'></i>
+                        <i class='bx bx-money nav__icon'></i>
                         <!--i class='bx bxs-plane-take-off nav__logo-icon'></i-->
                         <span class="nav__name">
                            Boletos aereos

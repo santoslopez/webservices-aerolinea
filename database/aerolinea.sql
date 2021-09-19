@@ -3,7 +3,7 @@ USE aerolinea;
 
 
 CREATE TABLE Idiomas(
-    codigoIdioma VARCHAR(3) NOT NULL,
+    codigoIdioma SERIAL NOT NULL,
     nombreIdioma varchar(20) NOT NULL,
     PRIMARY KEY (codigoIdioma)
 );
@@ -20,7 +20,6 @@ CREATE TABLE Aeropuerto(
 );
 
 
-
 CREATE TABLE Empleados(
     codigoEmpleado SERIAL NOT NULL,
     nombreDatos VARCHAR(60) NOT NULL,
@@ -35,7 +34,7 @@ CREATE TABLE Empleados(
 
 CREATE TABLE EmpleadoXIdioma(
 	codigoEmpleado int NOT NULL,
-	codigoIdioma VARCHAR(3) NOT NULL,
+	codigoIdioma int NOT NULL,
 	PRIMARY KEY(codigoEmpleado, codigoIdioma),
 	FOREIGN KEY (codigoEmpleado) REFERENCES Empleados(codigoEmpleado),
 	FOREIGN KEY (codigoIdioma) REFERENCES Idiomas(codigoIdioma)

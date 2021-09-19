@@ -12,7 +12,7 @@
     <!-- referencia al css del login -->
     <link rel="stylesheet" href="../css/login.css"/>
 
-    <title>Registrar idiomas</title>
+    <title>Idiomas que domina empleado</title>
   </head>
   <body>
 
@@ -34,17 +34,55 @@
 
           </div>
 
-        <h2 class="fw-bold text-center pt-5 mb-5 py-5">Registrar idiomas</h2>
+        <h2 class="fw-bold text-center pt-5 mb-5 py-5">Idiomas que domina empleado</h2>
 
         <form action="queryRegistrarIdiomas.php" method="POST">
 
+          <div class="mb-4">
+				    <label for="labelCodigoIdioma" class="form-label">Idioma</label>
+				    <!--input type="text" class="form-control" aria-describedby="nameCodigoIdiomasEmpleado" minlength="1" maxlength="3" name="txtNameCodigoIdiomaEmpleado" required placeholder="Ingresa el codido del idioma"-->
+            <?php
+      
+              include "../conexion/conexion.php";
+        
+              $resultCuentas=pg_query($conexion, "SELECT codigoIdioma,nombreIdioma FROM Idiomas");
+
+              echo "<select name='txtNameCodigoIdiomaEmpleado'>\n";
+
+              while ($row= pg_fetch_row($resultCuentas)) {
+                  $codigo = $row[0];
+                  $nombre = $row[1];
+                  echo "<option value='$codigo' id='opcion$codigo' selected='$codigo'>$nombre</option>";
+              }
+              echo "</select>";
+      ?>
+			  
+          </div>
+
         <div class="mb-4">
-				  <label for="labelNombreIdioma" class="form-label">Nombre idioma</label>
-				  <input type="text" class="form-control" minlength="1" maxlength="20" aria-describedby="nameIdiomas" name="txtNameIdiomas" required placeholder="Ingresa el idioma" >
-			  </div>			
+				  <label for="labelNombreIdioma" class="form-label">Empleado</label>
+				  <!--input type="text" class="form-control" minlength="1" maxlength="20" aria-describedby="nameIdiomasEmpleados" name="txtNameIdiomasEmpleado" required placeholder="Ingresa el idioma"-->
+          <?php
+      
+      include "../conexion/conexion.php";
+      
+      $resultCuentas=pg_query($conexion, "SELECT codigoEmpleado,nombreDatos FROM Empleados");
+
+      echo "<select name='txtNameIdiomasEmpleado'>\n";
+
+      while ($row= pg_fetch_row($resultCuentas)) {
+          $codigo = $row[0];
+          $nombre = $row[1];
+          echo "<option value='$codigo' id='opcion$codigo' selected='$codigo'>$nombre</option>";
+      }
+      echo "</select>";
+      ?>
+      
+        
+        </div>			
            
         <div class="d-grid">
-          <button type="submit" class="btn btn-primary">Registrar idiomas</button>
+          <button type="submit" class="btn btn-primary">Registrar idiomas empleado</button>
         </div><br>
 
         <div class="d-grid">

@@ -62,14 +62,45 @@
 
       <div class="mb-4">
 				<label for="labelAeropuertoOrigen" class="form-label">Aeropuerto de origen</label>
-				<input type="text" class="form-control" aria-describedby="nameAeropuertoOrigen" name="txtAeropuertoOrigen" required placeholder="Ingresa aeropuerto origen" >
-			</div>
+				<!--input type="text" class="form-control" aria-describedby="nameAeropuertoOrigen"  required placeholder="Ingresa aeropuerto origen" -->
+			
+      <?php
+      
+      include "../conexion/conexion.php";
+      $resultCuentas=pg_query($conexion, "SELECT codigoAeropuerto,nombreAeropuerto FROM Aeropuerto");
+
+      echo "<select name='txtAeropuertoOrigen'>\n";
+
+      while ($row= pg_fetch_row($resultCuentas)) {
+          $codigo = $row[0];
+          $nombre = $row[1];
+          echo "<option value='$codigo' id='opcion$codigo' selected='$codigo'>$nombre</option>";
+      }
+      echo "</select>";
+      ?>
+      
+      </div>
 
 
       <div class="mb-4">
 				<label for="labelAeropuertoDestino" class="form-label">Aeropuerto destino</label>
-				<input type="text" class="form-control" aria-describedby="nameAeropuertoDestino" name="txtAeropuertoDestino" required placeholder="Ingresa aeropuerto destino" >
-			</div>
+				<!--input type="text" class="form-control" aria-describedby="nameAeropuertoDestino" name="txtAeropuertoDestino" required placeholder="Ingresa aeropuerto destino" -->
+			
+        <?php
+      
+      include "../conexion/conexion.php";
+      $resultCuentas=pg_query($conexion, "SELECT codigoAeropuerto,nombreAeropuerto FROM Aeropuerto");
+
+      echo "<select name='txtAeropuertoDestino'>\n";
+      while ($row= pg_fetch_row($resultCuentas)) {
+          $codigo = $row[0];
+          $nombre = $row[1];
+          echo "<option value='$codigo' id='opcion$codigo' selected='$codigo'>$nombre</option>";
+      }
+      echo "</select>";
+      ?>			
+      
+      </div>
 
 
           <div class="d-grid">

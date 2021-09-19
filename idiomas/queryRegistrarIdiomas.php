@@ -21,11 +21,12 @@
 		En el POST colocamos el nombre del NAME de cada input del formulario donde ingresamos los datos.
 		El formulario corresponde al archivo formularioIdiomas.php
 	*/
-	$obtenerCodigoIdioma= $_POST['txtNameCodigoIdioma'];
+	//$obtenerCodigoIdioma= $_POST['txtNameCodigoIdioma'];
 	$obtenerNombreIdioma= $_POST['txtNameIdiomas'];
 
 
-	if(!isset($obtenerCodigoIdioma,$obtenerNombreIdioma)) {
+	if(!isset($obtenerNombreIdioma)) {
+		
 		header('Location: ../index.php');
 		//exit('Por favor ingresa el nombre de usuario y password.');
 	}else {
@@ -53,8 +54,7 @@
 
 	}else {
 
-		$consulta  = sprintf("INSERT INTO Idiomas(codigoIdioma,nombreIdioma) VALUES('%s','%s');",
-		pg_escape_string($obtenerCodigoIdioma),
+		$consulta  = sprintf("INSERT INTO Idiomas(nombreIdioma) VALUES('%s');",
 		pg_escape_string($obtenerNombreIdioma));
 		$ejecutarConsulta = pg_query($conexion, $consulta);
 	
