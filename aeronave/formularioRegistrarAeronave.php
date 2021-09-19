@@ -44,12 +44,12 @@
 
       <div class="mb-4">
 				<label for="labelPaisAeropuerto" class="form-label">Capacidad de Pasajeros</label>
-				<input type="text" class="form-control" minlength="1" maxlength="50" aria-describedby="namePais" name="pasajeros" required placeholder="Ingresa la capacidad de pasajeros de la aeronave">
+				<input type="number" class="form-control" minlength="1" maxlength="50" aria-describedby="namePais" name="pasajeros" required placeholder="Ingresa la capacidad de pasajeros de la aeronave">
 			</div>
 
       <div class="mb-4">
 				<label for="labelPaisAeropuerto" class="form-label">Capacidad de Peso</label>
-				<input type="text" class="form-control" minlength="1" maxlength="50" aria-describedby="namePais" name="peso" required placeholder="Ingresa la capacidad de peso de la aeronave">
+				<input type="number" step="0.01" class="form-control" minlength="1" maxlength="10" aria-describedby="namePais" name="peso" required placeholder="Ingresa la capacidad de peso de la aeronave">
 			</div>	
            
       <div class="d-grid">
@@ -59,7 +59,7 @@
       <div class="d-grid">
           <a href="../index.php" class="btn btn-primary">Regresar atrás</a>       
       </div>
-
+      
         </form>    
    
         </div>

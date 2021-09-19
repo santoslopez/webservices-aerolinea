@@ -35,7 +35,7 @@
             echo "<div class='alert alert-danger' role='alert' >
                     No hay información de idiomas que domina el empleado
                   </div>
-                  <a href='idiomasEmpleados/formularioRegistrarEmpleadosIdiomas.php'>Registrar idioma empleado</a>";
+                 ";
         }else{
                                                 
             # Si hay datos, entonces dibujamos el encabezado una sola vez
@@ -64,8 +64,7 @@
                 echo "</tr>";                                               
             }
             echo "</tbody>
-            </table>
-            <a href='idiomasEmpleados/formularioRegistrarEmpleadosIdiomas.php'>Registrar idioma empleado</a>";
+            </table>";
 
         }
 

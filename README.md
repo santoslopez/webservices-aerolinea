@@ -10,3 +10,5 @@ Diagrama utilizado para la creación del script de la base de datos.
 
 # Archivo index.php
 Dashboard principal del sistema 
+
+# Actualmente el permite registrar, modificar y listar en : empleados, aeropuerto, rutas, viajes, idiomas, aeronave,

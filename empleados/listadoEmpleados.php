@@ -51,7 +51,10 @@
 
         // codigoIdiomaEliminar: se recupera en queryEliminarIdiomasDomina.php
         echo "<td><a href=empleados/queryEliminarEmpleado.php?codigoEmpleadoEliminar=$row[0] class=opcionEliminarLenguas><img src='img/x-button.png' class='zoomImagen' alt='Eliminar contenido' style='width:15%;heigth:15%'></a></td>";
-     
+
+        //echo "<td><a href=idiomasEmpleados/queryRegistrarIdiomasEmpleados?codigoEmpleadoEliminar=$row[0] class=opcionEliminarLenguas><img src='img/x-button.png' class='zoomImagen' alt='Eliminar contenido' style='width:15%;heigth:15%'></a></td>";
+        echo "<td><a href=idiomasEmpleados/formularioRegistrarEmpleadosIdiomas.php?codigoEmpleadoDatos=".urlencode($row[0])."&nombreEmpleado=".urlencode($row[1])."><img src='img/plus.png' class='zoomImagen' alt='Eliminar contenido' style='width:15%;heigth:15%'></a></td>";
+
         echo "</tr>";                                               
     }
     echo "</tbody>

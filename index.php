@@ -36,12 +36,6 @@
 
 
 
-    <a href="https://www.youtube.com/watch?v=C6227evfBig" >Design</a><br>
-
-    <a href="https://flaticon.com" >Iconos</a><br>
-    <a href="https://boxicons.com/?query=bag" >Iconos menu</a><br>
-
-    
 
     <main class="main" style="width:95%;margin-right:10%;">
         <!--div id="contents" style="background: red;width:90%;margin-right:10%;"-->
@@ -71,6 +65,7 @@
         <div class="tab-pane fade" id="empleadosIdiomas" role="tabpanel" aria-labelledby="empleadosIdiomas-tab" style="width:100%">
             <div class="alert alert-primary" role="alert">
                 <h2><span style="color:blue">Empleados idiomas</span></h2>
+                Falta terminarlo!
             </div>
             <br>
             <?php
@@ -135,6 +130,23 @@
         </div>
 
 
+        <div class="tab-pane fade" id="acerca" role="tabpanel" aria-labelledby="acerca-tab" style="width:100%">
+            <div class="alert alert-primary" role="alert">
+                <h2><span style="color:blue">Acerca</span></h2>
+                Proyecto aerolínea, curso CC6 2021.
+
+                <H3>Diseño</H3>
+                <a href="https://www.youtube.com/watch?v=C6227evfBig" >autor</a><br>
+
+                <h3>Iconos</h3>
+                <a href="https://flaticon.com" >Iconos</a><br>
+                <a href="https://boxicons.com/?query=bag" >Iconos menu</a><br>
+
+
+            </div>
+        </div>
+
+
 
 
     </div>
@@ -176,7 +188,8 @@
                             Aeronave
                         </span>
                     </a>
-
+                    
+                    <!-- AEROPUERTO -->
                     <a class="nav-link" id="aeropuerto-tab" data-toggle="pill" href="#aeropuerto"  role="tab" aria-controls="aeropuerto" aria-selected="false">
                         <i class='bx bxs-plane-take-off nav__logo-icon'></i>
                         <!--i class='bx bxs-plane-take-off nav__logo-icon'></i-->
@@ -185,6 +198,7 @@
                         </span>
                     </a>
 
+                <!-- Idiomas -->
 
                 <a class="nav-link" id="idiomas-tab" data-toggle="pill" href="#idiomas"  role="tab" aria-controls="idiomas" aria-selected="true" aria-label="Home">            
                     <i class='bx bxs-flag-alt nav__icon'></i>       
@@ -192,18 +206,8 @@
                         Idiomas
                     </span>
                 </a>
-                        <!--i class='bx bxs-layer nav__logo-icon'></i-->
-
-                <!--a href="#libros" class="nav-link nav__link active" role="tab" aria-controls="v-libros" aria-selected="true">
-
-                    <i class='bx bxs-flag-alt nav__icon'></i>
-
-                        
-                        <span class="nav__logo-name">
-                            Idiomas
-                        </span>
-                    </a!-->
-
+  
+                 <!-- Empleados -->
                     <!--a href="#v-pills-profile" class="nav-link nav__link" role="tab" aria-controls="v-pills-profile" aria-selected="false"--->
                     <a class="nav-link" id="empleados-tab" data-toggle="pill" href="#empleados"  role="tab" aria-controls="empleados" aria-selected="false">
                        
@@ -214,7 +218,7 @@
                     </a>  
 
                     <!-- IDIOMAS QUE DOMINA EMPLEADO -->
-                    <a class="nav-link" id="empleadosIdiomas-tab" data-toggle="pill" href="#empleadosIdiomas"  role="tab" aria-controls="empleados" aria-selected="false">
+                    <a class="nav-link" id="empleadosIdiomas-tab" data-toggle="pill" href="#empleadosIdiomas"  role="tab" aria-controls="empleadosIdiomas" aria-selected="false">
                        
                        <i class='bx bxs-user-circle nav__icon'></i>
                            <span class="nav__name">
@@ -250,16 +254,22 @@
                         </span>
                     </a>
                     
-
+                     <!-- Acerca -->
+                    <a href="#acerca" class="nav-link" data-toggle="pill" id="acerca-tab"  href="#acerca" role="tab" aria-controls="acerca" aria-selected="false">
+                        <i class='bx bx-info-circle nav__icon'></i>
+                            <span class="nav__name">
+                                Acerca
+                            </span>
+                    </a>  
                 
 
                 </div>
             </div>
 
             <a href="#" class="nav__link">
-                <i class='bx bxs-user-circle nav__icon'></i>
+                <i class='bx bx-info-circle nav__icon'></i>
                 <span class="nav__name">
-                    Logout
+                    CC6 
                 </span>
             </a>  
 
@@ -279,12 +289,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
     
 
- <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <!--script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
--->
     
 </body>
 </html>

@@ -21,7 +21,11 @@
                     No hay información de rutas.
                   </div>
                   <a href='rutas/formularioRegistrarRutas.php'>Registrar rutas</a>";
-        }else{                                        
+        }else{             
+            
+
+
+
             # Si hay datos, entonces dibujamos el encabezado una sola vez
             echo '<table class="table table-striped">
             <thead>
@@ -30,7 +34,11 @@
                     <th scope="col">Tiempo vuelo</th>
                     <th scope="col">Hora salida</th>
                     <th scope="col">Distancia</th>
-                    <th scope="col">Aeropuerto origen</th>
+                    <th scope="col">
+                        Aeropuerto origen
+                    </th>
+
+                    
                     <th scope="col">Aeropuerto destino</th>
                     <th scope="col">Modificar</th>
                     <th scope="col">Eliminar</th>
@@ -38,6 +46,8 @@
             </thead>
             
             <tbody>';
+            //$resultCuentas=pg_query($conexion, "SELECT codigoAeropuerto,nombreAeropuerto FROM Aeropuerto");
+
             while ($row= pg_fetch_row($ejecutarConsultaObtenerInfo)) {
                 echo "<tr>";
                 echo "<td>$row[0]</td>";

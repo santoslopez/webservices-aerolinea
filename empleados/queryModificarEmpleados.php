@@ -1,5 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modificar empleados</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>  
+	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
-  <?php
+</head>
+<body>
+
+
+
+<?php
   /**
    * Archivo necesario para obtener la variable $conexion necesario para conectarse a la base de datos.
    */
@@ -39,13 +54,33 @@
   );
     
     if ($res) {
-      echo "<script>
-      alert ('datos actualizados');
-      </script>";   
-      header("Location: ../index.php");
+			echo "<script>
+			Swal.fire({
+				icon: 'success',
+				title: 'Datos actualizados en empleados',
+				text: 'Los datos se actualizaron',
+				footer: '<a>Datos actualizados correctamente.</a>'
+		  }).then(function() {
+			window.location = '../index.php';
+		});
+		  
+		  </script>";
     
     } else {
-      alert ("No actualizados");
+      echo "<script>
+      Swal.fire({
+          icon: 'error',
+          title: 'Datos no se actualizaron en empleados',
+          text: 'Los datos no se actualizaron',
+          footer: '<a>Error los datos no se actualizaron.</a>'
+    }).then(function() {
+      window.location = '../index.php';
+  });
+    
+    </script>";
     }
   }
 ?>
+
+</body>
+</html>

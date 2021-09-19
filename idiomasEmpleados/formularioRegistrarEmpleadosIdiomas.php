@@ -36,7 +36,7 @@
 
         <h2 class="fw-bold text-center pt-5 mb-5 py-5">Idiomas que domina empleado</h2>
 
-        <form action="queryRegistrarIdiomas.php" method="POST">
+        <form action="queryRegistrarIdiomasEmpleados.php" method="POST">
 
           <div class="mb-4">
 				    <label for="labelCodigoIdioma" class="form-label">Idioma</label>
@@ -47,7 +47,7 @@
         
               $resultCuentas=pg_query($conexion, "SELECT codigoIdioma,nombreIdioma FROM Idiomas");
 
-              echo "<select name='txtNameCodigoIdiomaEmpleado'>\n";
+              echo "<select name='txtNameCodigoIdioma'>\n";
 
               while ($row= pg_fetch_row($resultCuentas)) {
                   $codigo = $row[0];
@@ -60,23 +60,25 @@
           </div>
 
         <div class="mb-4">
-				  <label for="labelNombreIdioma" class="form-label">Empleado</label>
-				  <!--input type="text" class="form-control" minlength="1" maxlength="20" aria-describedby="nameIdiomasEmpleados" name="txtNameIdiomasEmpleado" required placeholder="Ingresa el idioma"-->
-          <?php
+				  <label for="labelNombreIdioma" class="form-label"> <strong>Empleado:</strong> <?=$_GET['nombreEmpleado']?></label>
+
+				  <input type="text" style="display:none" class="form-control" minlength="1" maxlength="20" value="<?=$_GET['codigoEmpleadoDatos']?>" aria-describedby="nameIdiomasEmpleados" name="txtNameIdiomasEmpleado" required placeholder="Ingresa el idioma">
+          
+          <!--?php
       
       include "../conexion/conexion.php";
       
-      $resultCuentas=pg_query($conexion, "SELECT codigoEmpleado,nombreDatos FROM Empleados");
+      $resultListaEmpleados=pg_query($conexion, "SELECT codigoEmpleado,nombreDatos FROM Empleados");
 
-      echo "<select name='txtNameIdiomasEmpleado'>\n";
+      echo "<select name='txtNameEmpleado'>\n";
 
-      while ($row= pg_fetch_row($resultCuentas)) {
+      while ($row= pg_fetch_row($resultListaEmpleados)) {
           $codigo = $row[0];
           $nombre = $row[1];
           echo "<option value='$codigo' id='opcion$codigo' selected='$codigo'>$nombre</option>";
       }
       echo "</select>";
-      ?>
+      ?-->
       
         
         </div>			

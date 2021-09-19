@@ -42,8 +42,9 @@
 			</div>	
         	<div class="mb-4">
                 <label for="">Nombres y apellidos</label>
+                
                 <input type="text" class="form-control" name="txtNuevosDatosEmpleado"  value="<?=$_GET['nuevosDatosEmpleado']?>" aria-describedby="ariaDatos" placeholder="Nombre y apellidos" required><br>            
-			</div>	
+			    </div>	
                   
         	<div class="mb-4">
                 <label for="">Puesto</label>
