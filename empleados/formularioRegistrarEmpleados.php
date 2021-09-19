@@ -26,13 +26,14 @@
         
      
         <div class="col bgRegistrarCuenta d-none d-lg-block col-md-5 col-xl-6 rounded" > 
-          
+        <img class="aeronave" src="../img/officer.png" alt="Empleados" width="60%" height="60%" style="margin-top:25%;margin-left:15%;margin-rigth:15%">
+
         </div>
 
 
         <div class="col bg-white pd-5 rounded-end">
           <div class="text-end">
-            <img src="../imagenes/boy.png" alt="Iniciar sesion" width="48">
+            <img src="../img/officer.png" alt="Empleado" width="48">
 
           </div>
 
@@ -41,22 +42,22 @@
         <form action="queryRegistrarEmpleados.php" method="POST">
 			<div class="mb-4">
 				<label for="labelNombreApellidos" class="form-label">Nombre y apellidos</label>
-				<input type="text" class="form-control" aria-describedby="ariaNombreApellidos" name="txtNombreApellidos" required placeholder="Ingresa nombre y apellidos" >
+				<input type="text" class="form-control" minlength="1" maxlength="60" aria-describedby="ariaNombreApellidos" name="txtNombreApellidos" required placeholder="Ingresa nombre y apellidos" >
 			</div>	
       
       <div class="mb-4">
 				<label for="labelPuesto" class="form-label">Puesto</label>
-				<input type="text" class="form-control" aria-describedby="ariaPuesto" name="txtPuesto" required placeholder="Ingrese puesto">
+				<input type="text" class="form-control" minlength="1" maxlength="50" aria-describedby="ariaPuesto" name="txtPuesto" required placeholder="Ingrese puesto">
 			</div>	
 
       <div class="mb-4">
 				<label for="labelHorasDeVuelo" class="form-label">Horas de vuelo</label>
-				<input type="text" class="form-control" aria-describedby="ariaHorasDeVuelo" name="txtHorasVuelo" required placeholder="Ingrese horas de vuelo">
+				<input type="number" class="form-control" aria-describedby="ariaHorasDeVuelo" name="txtHorasVuelo" required placeholder="Ingrese horas de vuelo">
 			</div>	
 
       <div class="mb-4">
 				<label for="labelContactosEmergencia" class="form-label">Contactos de emergencia</label>
-				<input type="text" class="form-control" aria-describedby="ariaContactosEmergencia" name="txtContactosEmergencia" required placeholder="Ingrese contactos de emergencia">
+				<input type="text" class="form-control" minlength="1" maxlength="60" aria-describedby="ariaContactosEmergencia" name="txtContactosEmergencia" required placeholder="Ingrese contactos de emergencia">
 			</div>
       
       <div class="mb-4">
@@ -64,16 +65,20 @@
 				<input type="number" class="form-control" aria-describedby="ariaTiempoEmpresa" name="txtTiempoEnEmpresa" required placeholder="Ingrese tiempos en empresa">
 			</div>
 
-  
       <div class="mb-4">
 				<label for="labelNacionalidad" class="form-label">Nacionalidad</label>
-				<input type="text" class="form-control" aria-describedby="ariaNacionalidad" name="txtNacionalidadEmpleado" required placeholder="Ingrese la nacionalidad">
+				<input type="text" class="form-control" minlength="1" maxlength="50" aria-describedby="ariaNacionalidad" name="txtNacionalidadEmpleado" required placeholder="Ingrese la nacionalidad">
 			</div>
       
            
           
       <div class="d-grid">
-        <button type="submit" class="btn btn-primary">Registrar idiomas</button>
+        <button type="submit" class="btn btn-primary">Registrar empleados</button>
+      </div><br>
+
+
+      <div class="d-grid">
+          <a href="../index.php" class="btn btn-primary">Regresar atrás</a>       
       </div>
     </form>        
    

@@ -33,7 +33,7 @@ const showNavBar = (toggleId, navId,bodyId,headerId) =>{
 const linkColor = document.querySelectorAll('.nav__link')
 function colorLink(params) {
     if (linkColor) {
-        linkColor.forEach(L => l.classList.remove('active'))
+        linkColor.forEach(l => l.classList.remove('active'))
         this.classList.add('active')
     }
 }
@@ -42,4 +42,4 @@ function colorLink(params) {
 
 showNavBar('header-toggle','nav-bar','body-pd','header');
 
-linkColor.forEach(L => l.addEventListener('click',colorLink))
+linkColor.forEach(l => l.addEventListener('click',colorLink))

@@ -23,16 +23,14 @@
       
      
       <div class="row align-items-stretch">
-        
      
         <div class="col bgRegistrarCuenta d-none d-lg-block col-md-5 col-xl-6 rounded" > 
-          
+          <img class="aeronave" src="../img/languages.png" alt="Idiomas" width="100%" height="80%">
         </div>
-
 
         <div class="col bg-white pd-5 rounded-end">
           <div class="text-end">
-            <img src="../imagenes/boy.png" alt="Iniciar sesion" width="48">
+            <img src="../img/languages.png" alt="Idiomas" width="48">
 
           </div>
 
@@ -40,24 +38,28 @@
 
         <form action="queryRegistrarIdiomas.php" method="POST">
 
-        <div class="mb-4">
-				<label for="labelCodigoIdioma" class="form-label">Codigo idioma</label>
-				<input type="text" class="form-control" aria-describedby="nameCodigoIdiomas" minlength="1" maxlength="3" name="txtNameCodigoIdioma" required placeholder="Ingresa el codido del idioma" >
-			</div>
+          <div class="mb-4">
+				    <label for="labelCodigoIdioma" class="form-label">Codigo idioma</label>
+				    <input type="text" class="form-control" aria-describedby="nameCodigoIdiomas" minlength="1" maxlength="3" name="txtNameCodigoIdioma" required placeholder="Ingresa el codido del idioma" >
+			  </div>
 
         <div class="mb-4">
-				<label for="labelNombreIdioma" class="form-label">Nombre idioma</label>
-				<input type="text" class="form-control" minlength="1" maxlength="20" aria-describedby="nameIdiomas" name="txtNameIdiomas" required placeholder="Ingresa el idioma" >
-			</div>			
+				  <label for="labelNombreIdioma" class="form-label">Nombre idioma</label>
+				  <input type="text" class="form-control" minlength="1" maxlength="20" aria-describedby="nameIdiomas" name="txtNameIdiomas" required placeholder="Ingresa el idioma" >
+			  </div>			
            
-          <div class="d-grid">
-            <button type="submit" class="btn btn-primary">Registrar idiomas</button>
-          </div>
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary">Registrar idiomas</button>
+        </div><br>
 
-        </form>        
-   
+        <div class="d-grid">
+          <a href="../index.php" class="btn btn-primary">Regresar atrás</a>       
         </div>
+
+      </form> 
+   
       </div>
+    </div>
 
 
     </div>

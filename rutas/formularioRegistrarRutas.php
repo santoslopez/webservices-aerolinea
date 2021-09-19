@@ -25,13 +25,14 @@
         
      
         <div class="col bgRegistrarCuenta d-none d-lg-block col-md-5 col-xl-6 rounded" > 
-          
+          <img class="aeronave" src="../img/ruta-aerea.png" alt="Empleados" width="60%" height="60%" style="margin-top:25%;margin-left:15%;margin-rigth:15%">
+
         </div>
 
 
         <div class="col bg-white pd-5 rounded-end">
           <div class="text-end">
-            <img src="../imagenes/boy.png" alt="Registrar rutas" width="48">
+            <img src="../img/ruta-aerea.png" alt="Registrar rutas" width="48">
           </div>
 
         <h2 class="fw-bold text-center pt-5 mb-5 py-5">Registrar rutas</h2>
@@ -73,7 +74,12 @@
 
           <div class="d-grid">
             <button type="submit" class="btn btn-primary">Registrar rutas</button>
-          </div>
+          </div><br>
+
+
+      <div class="d-grid">
+          <a href="../index.php" class="btn btn-primary">Regresar atrás</a>       
+      </div>
 
         </form>        
    

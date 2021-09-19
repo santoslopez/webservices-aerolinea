@@ -58,7 +58,7 @@ CREATE TABLE Rutas(
 CREATE TABLE Aeronave(
     matricula varchar(10) NOT NULL,
     marca varchar(40) NOT NULL,
-    capacidadPasajero int NOT NULL,
+    capacidadPasajeros int NOT NULL,
     capacidadPeso FLOAT NOT NULL,
     modelo INT NOT NULL,
     PRIMARY KEY (matricula)

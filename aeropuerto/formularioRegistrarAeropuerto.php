@@ -26,13 +26,14 @@
         
      
         <div class="col bgRegistrarCuenta d-none d-lg-block col-md-5 col-xl-6 rounded" > 
-          
+          <img class="aeronave" src="../img/airplane.png" alt="Aeropuerto" width="80%" height="80%" style="margin-top:25%;margin-left:15%;margin-rigth:15%">
+
         </div>
 
 
         <div class="col bg-white pd-5 rounded-end">
           <div class="text-end">
-            <img src="../imagenes/boy.png" alt="Iniciar sesion" width="48">
+            <img src="../img/airplane.png" alt="Iniciar sesion" width="48">
 
           </div>
 
@@ -60,9 +61,13 @@
 				<input type="text" class="form-control" minlength="1" maxlength="50" aria-describedby="namePais" name="txtNamePais" required placeholder="Ingresa pais del aeropuerto" >
 			</div>	
            
-          <div class="d-grid">
-            <button type="submit" class="btn btn-primary">Registrar idiomas</button>
-          </div>
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary">Registrar idiomas</button>
+      </div><br>
+      
+      <div class="d-grid">
+          <a href="../index.php" class="btn btn-primary">Regresar atrás</a>       
+      </div>
 
         </form>        
    
