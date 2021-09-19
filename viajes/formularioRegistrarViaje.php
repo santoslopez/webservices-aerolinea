@@ -38,12 +38,38 @@
 
       <div class="mb-4">
 				<label for="labelPaisAeropuerto" class="form-label">Numero de Vuelo</label>
-				<input type="text" class="form-control" minlength="1" maxlength="50" aria-describedby="namePais" name="numeroVuelo" required placeholder="Ingresa el numero de vuelo">
+				<!--input type="text" class="form-control" minlength="1" maxlength="50" aria-describedby="namePais" name="numeroVuelo" required placeholder="Ingresa el numero de vuelo"-->
+        <?php
+            include "../conexion/conexion.php";
+            $resultCuentas=pg_query($conexion, "SELECT numeroVuelo FROM Rutas");
+
+            echo "<select name='numeroVuelo'>\n";
+
+            while ($row= pg_fetch_row($resultCuentas)) {
+              $codigo = $row[0];
+              echo "<option value='$codigo' id='opcion$codigo' selected='$codigo'>$codigo</option>";
+            }
+            echo "</select>";
+        ?>
 			</div>
 
       <div class="mb-4">
 				<label for="labelPaisAeropuerto" class="form-label">Matricula</label>
-				<input type="text" class="form-control" minlength="1" maxlength="50" aria-describedby="namePais" name="matricula" required placeholder="Ingresa la matricula de la aeronave">
+				<!--input type="text" class="form-control" minlength="1" maxlength="50" aria-describedby="namePais" name="matricula" required placeholder="Ingresa la matricula de la aeronave"-->
+        <?php
+            include "../conexion/conexion.php";
+            $resultCuentas=pg_query($conexion, "SELECT matricula FROM Aeronave");
+
+            echo "<select name='matricula'>\n";
+
+            while ($row= pg_fetch_row($resultCuentas)) {
+              $codigo = $row[0];
+              echo "<option value='$codigo' id='opcion$codigo' selected='$codigo'>$codigo</option>";
+            }
+            echo "</select>";
+        ?>
+
+        
 			</div>	
            
       <div class="d-grid">
