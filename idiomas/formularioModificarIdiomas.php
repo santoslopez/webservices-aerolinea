@@ -9,9 +9,6 @@
     <!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
-    <!-- referencia al css del login -->
-    <link rel="stylesheet" href="../css/login.css"/>
-
     <title>Modificar idiomas</title>
   </head>
   <body>
@@ -35,14 +32,10 @@
         <h2 class="fw-bold text-center pt-5 mb-5 py-5">Actualizar datos idioma</h2>
 
         <form action="queryModificarIdiomas.php" method="POST">
-          <!--div class="mb-4">
-				    <label for="labelCodigoIdioma" class="form-label">Codigo idioma</label>
-				    <input type="text" class="form-control" aria-describedby="nameCodigoIdiomas" minlength="1" maxlength="3" name="txtNameCodigoIdioma" required placeholder="Ingresa el codido del idioma" >
-			  </div-->
 
         <div class="mb-4">
             <label for="lblCodigo">Codigo</label>
-            <input type="number" class="form-control" name="txtCodigoIdioma"  value="<?=$_GET['codigoIdiomaModificar']?>" aria-describedby="ariaCodigoTipo" placeholder="Codigo idioma" readonly required><br>
+            <input type="number" class="form-control" name="txtCodigoIdioma"  value="<?=$_GET['codigoIdiomaModificar']?>" aria-describedby="ariaCodigoTipo" placeholder="Codigo idioma" readonly required>
         </div>
 
         <div class="mb-4">
@@ -55,7 +48,7 @@
         </div><br>
 
         <div class="d-grid">
-          <a href="../index.php" class="btn btn-primary">Regresar atrás</a>       
+          <a href="../index.php" class="btn btn-primary">Regresar</a>       
         </div>
 
       </form> 

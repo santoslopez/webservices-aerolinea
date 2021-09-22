@@ -12,7 +12,7 @@
               </div>
               <a href='aeropuerto/formularioRegistrarAeropuerto.php'>Registrar aeropuerto</a>";
     }else{
-        $listadoRutas= "SELECT numeroVuelo,tiempoVuelo,horaSalida,distancia,aeropuertoOrigen,aeropuertoDestino FROM Rutas";
+        $listadoRutas= "SELECT numeroVuelo,tiempoVuelo,horaSalida,distancia,aeropuertoOrigen,aeropuertoDestino FROM Rutas ORDER BY numeroVuelo";
         $ejecutarConsultaObtenerInfo = pg_query($conexion,$listadoRutas);
         
         // verificamos que existen registros, sino no dibujamos la tabla
@@ -23,8 +23,6 @@
                   <a href='rutas/formularioRegistrarRutas.php'>Registrar rutas</a>";
         }else{             
             
-
-
 
             # Si hay datos, entonces dibujamos el encabezado una sola vez
             echo '<table class="table table-striped">

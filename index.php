@@ -35,8 +35,6 @@
 <body id="body-pd" style="margin-top:7%;">
 
 
-
-
     <main class="main" style="width:95%;margin-right:10%;">
         <!--div id="contents" style="background: red;width:90%;margin-right:10%;"-->
  
@@ -241,7 +239,7 @@
                         <i class='bx bxs-shopping-bags nav__icon'></i>
                         <!--i class='bx bxs-plane-take-off nav__logo-icon'></i-->
                         <span class="nav__name">
-                            VIAJES
+                            Viajes
                         </span>
                     </a>
 

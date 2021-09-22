@@ -9,9 +9,6 @@
     <!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
-    <!-- referencia al css del login -->
-    <link rel="stylesheet" href="../css/login.css"/>
-
     <title>Registrar rutas</title>
   </head>
   <body>
@@ -25,7 +22,7 @@
         
      
         <div class="col bgRegistrarCuenta d-none d-lg-block col-md-5 col-xl-6 rounded" > 
-          <img class="aeronave" src="../img/ruta-aerea.png" alt="Empleados" width="60%" height="60%" style="margin-top:25%;margin-left:15%;margin-rigth:15%">
+          <img class="aeronave" src="../img/ruta-aerea.png" alt="Empleados" width="60%" height="60%" style="margin-top:25%;margin-left:15%;margin-right:15%">
 
         </div>
 
@@ -35,33 +32,32 @@
             <img src="../img/ruta-aerea.png" alt="Registrar rutas" width="48">
           </div>
 
-        <h2 class="fw-bold text-center pt-5 mb-5 py-5">Registrar rutas</h2>
+        <h2 class="fw-bold text-center pt-5 mb-5 py-5" style="padding-bottom: 0rem!important; padding-top: 0rem!important; margin-bottom: 1rem!important;">Registrar rutas</h2>
 
         <form action="queryRegistrarRutas.php" method="POST">
       
         <div class="mb-4">
-				<label for="labelNumeroVuelo" class="form-label">Numero de vuelo: </label>
+				<label for="labelNumeroVuelo" class="form-label">Numero de Vuelo: </label>
 				<input type="number" min="100" max="1000" class="form-control" aria-describedby="nameNumeroVuelo" name="txtNumeroVuelo" required placeholder="Ingresa el numero de vuelo">
 			</div>	
       
       <div class="mb-4">
-				<label for="labelCiudadAeropuerto" class="form-label">Tiempo vuelo</label>
-				<input type="number" step="0.01" class="form-control" aria-describedby="nameTiempoVuelo" name="txtTiempoVuelo" required placeholder="Ingresa tiempo de vuelo" >
+				<label for="labelCiudadAeropuerto" class="form-label">Tiempo de Vuelo</label>
+				<input type="number" min="0" step="0.01" class="form-control" aria-describedby="nameTiempoVuelo" name="txtTiempoVuelo" required placeholder="Ingresa tiempo de vuelo" >
 			</div>	
            
 			<div class="mb-4">
-				<label for="labelHoraSalida" class="form-label">Hora salida</label>
-				<input type="text" class="form-control" aria-describedby="nameHoraSalida" name="txtHoraSalida" required placeholder="Ingresa el tiempo de salida" >
+				<label for="labelHoraSalida" class="form-label">Hora de Salida</label>
+				<input type="time" class="form-control" aria-describedby="nameHoraSalida" name="txtHoraSalida" required placeholder="Ingresa el tiempo de salida" >
 			</div>
 
       <div class="mb-4">
 				<label for="labelDistancia" class="form-label">Distancia</label>
-				<input type="number" class="form-control" aria-describedby="nameDistancia" name="txtDistancia" required placeholder="Ingresa la distancia" >
+				<input type="number" min="0" class="form-control" aria-describedby="nameDistancia" name="txtDistancia" required placeholder="Ingresa la distancia" >
 			</div>
 
-
       <div class="mb-4">
-				<label for="labelAeropuertoOrigen" class="form-label">Aeropuerto de origen</label>
+				<label for="labelAeropuertoOrigen" class="form-label">Aeropuerto Origen</label>
 				<!--input type="text" class="form-control" aria-describedby="nameAeropuertoOrigen"  required placeholder="Ingresa aeropuerto origen" -->
 			
       <?php
@@ -69,7 +65,7 @@
       include "../conexion/conexion.php";
       $resultCuentas=pg_query($conexion, "SELECT codigoAeropuerto,nombreAeropuerto FROM Aeropuerto");
 
-      echo "<select name='txtAeropuertoOrigen'>\n";
+      echo "<select name='txtAeropuertoOrigen' class='form-select form-select-sm mb-3' aria-label='.form-select-sm example'> \n";
 
       while ($row= pg_fetch_row($resultCuentas)) {
           $codigo = $row[0];
@@ -83,7 +79,7 @@
 
 
       <div class="mb-4">
-				<label for="labelAeropuertoDestino" class="form-label">Aeropuerto destino</label>
+				<label for="labelAeropuertoDestino" class="form-label">Aeropuerto Destino</label>
 				<!--input type="text" class="form-control" aria-describedby="nameAeropuertoDestino" name="txtAeropuertoDestino" required placeholder="Ingresa aeropuerto destino" -->
 			
         <?php
@@ -91,7 +87,7 @@
       include "../conexion/conexion.php";
       $resultCuentas=pg_query($conexion, "SELECT codigoAeropuerto,nombreAeropuerto FROM Aeropuerto");
 
-      echo "<select name='txtAeropuertoDestino'>\n";
+      echo "<select name='txtAeropuertoDestino' class='form-select form-select-sm mb-3' aria-label='.form-select-sm example'>\n";
       while ($row= pg_fetch_row($resultCuentas)) {
           $codigo = $row[0];
           $nombre = $row[1];
@@ -102,14 +98,13 @@
       
       </div>
 
-
           <div class="d-grid">
             <button type="submit" class="btn btn-primary">Registrar rutas</button>
           </div><br>
 
 
       <div class="d-grid">
-          <a href="../index.php" class="btn btn-primary">Regresar atrás</a>       
+          <a href="../index.php" class="btn btn-primary" style="margin-bottom: 15px;">Regresar</a>       
       </div>
 
         </form>        

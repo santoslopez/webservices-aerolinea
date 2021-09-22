@@ -41,7 +41,7 @@
     }
     echo "</tbody>
     </table>
-    <a href='idiomas/formularioIdiomas.php'>Registrar idiomas domina</a>";      
+    <a href='idiomas/formularioIdiomas.php'>Registrar idioma</a>";      
     
     
     }

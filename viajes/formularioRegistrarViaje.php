@@ -43,7 +43,7 @@
             include "../conexion/conexion.php";
             $resultCuentas=pg_query($conexion, "SELECT numeroVuelo FROM Rutas");
 
-            echo "<select name='numeroVuelo'>\n";
+            echo "<select name='numeroVuelo' class='form-select form-select-lg mb-3' aria-label='.form-select-lg example'>\n";
 
             while ($row= pg_fetch_row($resultCuentas)) {
               $codigo = $row[0];
@@ -60,7 +60,7 @@
             include "../conexion/conexion.php";
             $resultCuentas=pg_query($conexion, "SELECT matricula FROM Aeronave");
 
-            echo "<select name='matricula'>\n";
+            echo "<select name='matricula' class='form-select form-select-lg mb-3' aria-label='.form-select-lg example'>\n";
 
             while ($row= pg_fetch_row($resultCuentas)) {
               $codigo = $row[0];
@@ -68,13 +68,15 @@
             }
             echo "</select>";
         ?>
-
-        
 			</div>	
            
-      <div class="d-grid">
-        <button type="submit" class="btn btn-primary">Registrar Viaje</button>
-      </div>
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary">Registrar Viaje</button>
+        </div> <br>
+      
+        <div class="d-grid">
+          <a href="../index.php" class="btn btn-primary" style="margin-bottom: 15px;">Regresar</a>       
+        </div>
 
         </form>    
    

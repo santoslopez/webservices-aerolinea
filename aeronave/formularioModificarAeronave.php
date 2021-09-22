@@ -45,7 +45,7 @@
 
                     <div class="mb-4">
                         <label for="labelPaisAeropuerto" class="form-label">Capacidad de Pasajeros</label>
-                        <input type="text" class="form-control" minlength="1" maxlength="50" aria-describedby="namePais" name="pasajeros" required value="<?=$_GET['capacidadPasajeros']?>" >
+                        <input type="text" class="form-control" min="1" minlength="1" maxlength="50" aria-describedby="namePais" name="pasajeros" required value="<?=$_GET['capacidadPasajeros']?>" >
                     </div>
 
                     <div class="mb-4">
@@ -55,6 +55,10 @@
             
                     <div class="d-grid">
                         <button type="submit" class="btn btn-primary">Modificar Aeronave</button>
+                    </div><br>
+
+                    <div class="d-grid">
+                        <a href="../index.php" class="btn btn-primary" style="margin-bottom: 15px;">Regresar</a>       
                     </div>
 
                 </form>    
