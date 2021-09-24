@@ -115,16 +115,16 @@
                                 
                 include 'aeronave/listadoAeronave.php';    
             ?>
-
         </div>
 
 
         <div class="tab-pane fade" id="boletosAereos" role="tabpanel" aria-labelledby="boletosAereos-tab" style="width:100%">
             <div class="alert alert-primary" role="alert">
-                <h2><span style="color:blue">VIAJES</span></h2>
-                No implementado!!!
-
+                <h2><span style="color:blue">Boletos Aéreos</span></h2>
             </div>
+                <?php                    
+                    include 'boletos/listadoBoletos.php';    
+                ?>
         </div>
 
 
@@ -143,9 +143,6 @@
 
             </div>
         </div>
-
-
-
 
     </div>
         <!--/div-->
@@ -260,7 +257,6 @@
                             </span>
                     </a>  
                 
-
                 </div>
             </div>
 

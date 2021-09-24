@@ -51,7 +51,7 @@
 
       <div class="mb-4">
 				<label for="labelContactosEmergencia" class="form-label">Contactos de emergencia</label>
-				<input type="tel" class="form-control" minlength="1" maxlength="60" pattern="[0-9]{4}-[0-9]{4}" aria-describedby="ariaContactosEmergencia" name="txtContactosEmergencia" required placeholder="Ingrese contactos de emergencia con formato 1234-5678">
+				<input type="tel" class="form-control" pattern="[0-9]{4}-[0-9]{4}" aria-describedby="ariaContactosEmergencia" name="txtContactosEmergencia" required placeholder="Ingrese contactos de emergencia con formato 1234-5678">
 			</div>
       
       <div class="mb-4">

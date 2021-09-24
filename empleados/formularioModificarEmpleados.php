@@ -50,7 +50,7 @@
 
         	<div class="mb">
                 <label for="">Contacto de emergencia</label>
-                <input type="text" class="form-control" name="txtNuevoContactoDeEmergencia"  value="<?=$_GET['nuevoContactoDeEmergencia']?>" aria-describedby="ariaContactoEmergencia" placeholder="Contacto de emergencia" required><br>
+                <input type="tel" class="form-control" pattern="[0-9]{4}-[0-9]{4}" name="txtNuevoContactoDeEmergencia"  value="<?=$_GET['nuevoContactoDeEmergencia']?>" aria-describedby="ariaContactoEmergencia" placeholder="Contacto de emergencia" required><br>
                    
 			</div>	    
             
