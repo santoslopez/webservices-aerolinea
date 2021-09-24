@@ -14,7 +14,6 @@
    
     <div class="container w-75  mt-5 rounded shadow" style="background:#F5F5F5;">
       
-     
       <div class="row align-items-stretch">
      
         <div class="col bgRegistrarCuenta d-none d-lg-block col-md-5 col-xl-6 rounded" > 

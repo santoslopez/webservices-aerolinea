@@ -114,18 +114,23 @@
                                 
                 include 'aeronave/listadoAeronave.php';    
             ?>
-
         </div>
 
 
         <div class="tab-pane fade" id="boletosAereos" role="tabpanel" aria-labelledby="boletosAereos-tab" style="width:100%">
             <div class="alert alert-primary" role="alert">
+              
+                <h2><span style="color:blue">Boletos Aéreos</span></h2>
+            </div>
+                <?php                    
+                    include 'boletos/listadoBoletos.php';    
+                ?>
+
                 <h2><span style="color:blue">VIAJES</span></h2>
             </div>
             <a href="XML_listaVuelos/script_lista_vuelos.php">IR lista</a>
             
             <a href="XML_listaVuelos/ver_xml.php">XML</a>
-
         </div>
 
 
@@ -144,9 +149,6 @@
 
             </div>
         </div>
-
-
-
 
     </div>
         <!--/div-->
@@ -261,7 +263,6 @@
                             </span>
                     </a>  
                 
-
                 </div>
             </div>
 
