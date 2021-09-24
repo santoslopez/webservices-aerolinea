@@ -63,7 +63,6 @@
         <div class="tab-pane fade" id="empleadosIdiomas" role="tabpanel" aria-labelledby="empleadosIdiomas-tab" style="width:100%">
             <div class="alert alert-primary" role="alert">
                 <h2><span style="color:blue">Empleados idiomas</span></h2>
-                Falta terminarlo!
             </div>
             <br>
             <?php
@@ -109,7 +108,7 @@
 
         <div class="tab-pane fade" id="aeronave" role="tabpanel" aria-labelledby="aeronave-tab" style="width:100%">
             <div class="alert alert-primary" role="alert">
-                <h2><span style="color:blue">Aeronave</span></h2>
+                <h2><span style="color:blue">Aerolineas</span></h2>
             </div>
             <?php
                                 
@@ -120,11 +119,18 @@
 
         <div class="tab-pane fade" id="boletosAereos" role="tabpanel" aria-labelledby="boletosAereos-tab" style="width:100%">
             <div class="alert alert-primary" role="alert">
+              
                 <h2><span style="color:blue">Boletos Aéreos</span></h2>
             </div>
                 <?php                    
                     include 'boletos/listadoBoletos.php';    
                 ?>
+
+                <h2><span style="color:blue">VIAJES</span></h2>
+            </div>
+            <a href="XML_listaVuelos/script_lista_vuelos.php">IR lista</a>
+            
+            <a href="XML_listaVuelos/ver_xml.php">XML</a>
         </div>
 
 

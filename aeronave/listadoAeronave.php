@@ -8,7 +8,7 @@
     // verificamos que existen registros, sino no dibujamos la tabla
     if (!(pg_num_rows($ejecutarConsultaObtenerInfo))) {
         echo "<div class='alert alert-danger' role='alert'>
-                No hay información de Aeronaves.
+                No hay información de aerolineas.
               </div>
               <a href='aeronave/formularioRegistrarAeronave.php'>Registrar aeronave</a>";
     }else{
