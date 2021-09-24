@@ -9,7 +9,7 @@
 
     include 'conexion/conexion.php';    
 
-    $listadoAeropuerto = "SELECT codigoAeropuerto,nombreAeropuerto,ciudad,pais FROM Aeropuerto";
+    $listadoAeropuerto = "SELECT codigoAeropuerto,nombreAeropuerto,ciudad,pais FROM Aeropuerto ORDER BY codigoAeropuerto";
     $ejecutarConsultaObtenerInfo = pg_query($conexion,$listadoAeropuerto);
     
     // verificamos que existen registros, sino no dibujamos la tabla
@@ -42,7 +42,7 @@
         echo "<td>$row[2]</td>";
         echo "<td>$row[3]</td>";        
         // ccodigoAeropuertoModificar, nuevoNombreAeropuerto y nuevoCiudadAeropuerto: se va recuperar en los formularios para modificar datos. El nombre se le pudo poner otro.
-        echo "<td><a href=aeropuerto/formularioModificarAeropuerto.php?codigoAeropuertoModificar=".urlencode($row[0])."&nuevoNombreAeropuerto=".urlencode($row[1])."&nuevoCiudadAeropuerto=".urlencode($row[2]).".&nuevoPaisAeropuerto=".urlencode($row[3])."><img src='img/refresh.png' class='zoomImagen' alt='Actualizar contenido' style='width:15%;heigth:15%;align:rigth'></a></td>";
+        echo "<td><a href=aeropuerto/formularioModificarAeropuerto.php?codigoAeropuertoModificar=".urlencode($row[0])."&nuevoNombreAeropuerto=".urlencode($row[1])."&nuevoCiudadAeropuerto=".urlencode($row[2])."&nuevoPaisAeropuerto=".urlencode($row[3])."><img src='img/refresh.png' class='zoomImagen' alt='Actualizar contenido' style='width:15%;heigth:15%;align:rigth'></a></td>";
 
         // codigoIdiomaEliminar: se recupera en queryEliminarIdiomasDomina.php
         echo "<td><a href=aeropuerto/queryEliminarAeropuerto.php?codigoAeropuertoEliminar=$row[0] class=opcionEliminarLenguas><img src='img/x-button.png' class='zoomImagen' alt='Eliminar contenido' style='width:15%;heigth:15%'></a></td>";

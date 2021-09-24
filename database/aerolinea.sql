@@ -4,7 +4,7 @@ USE aerolinea;
 
 CREATE TABLE Idiomas(
     codigoIdioma SERIAL NOT NULL,
-    nombreIdioma varchar(20) NOT NULL,
+    nombreIdioma VARCHAR(20) NOT NULL,
     PRIMARY KEY (codigoIdioma)
 );
 
@@ -24,17 +24,17 @@ CREATE TABLE Empleados(
     codigoEmpleado SERIAL NOT NULL,
     nombreDatos VARCHAR(60) NOT NULL,
     puesto VARCHAR(50) NOT NULL,
-    horasDeVuelo int NOT NULL,
-    contactoDeEmergencia varchar(60) NOT NULL,
-    tiempoEnEmpresa int NOT NULL,
+    horasDeVuelo INT NOT NULL,
+    contactoDeEmergencia VARCHAR(60) NOT NULL,
+    tiempoEnEmpresa INT NOT NULL,
     nacionalidad VARCHAR(50) NOT NULL,
     PRIMARY KEY (codigoEmpleado)
 );
 
 
 CREATE TABLE EmpleadoXIdioma(
-	codigoEmpleado int NOT NULL,
-	codigoIdioma int NOT NULL,
+	codigoEmpleado INT NOT NULL,
+	codigoIdioma INT NOT NULL,
 	PRIMARY KEY(codigoEmpleado, codigoIdioma),
 	FOREIGN KEY (codigoEmpleado) REFERENCES Empleados(codigoEmpleado),
 	FOREIGN KEY (codigoIdioma) REFERENCES Idiomas(codigoIdioma)
@@ -45,7 +45,7 @@ CREATE TABLE Rutas(
     numeroVuelo INT NOT NULL,
     tiempoVuelo FLOAT NOT NULL,
     horaSalida TIME NOT NULL,
-    distancia int NOT NULL,
+    distancia INT NOT NULL,
     aeropuertoOrigen VARCHAR(3) NOT NULL,
     aeropuertoDestino VARCHAR(3) NOT NULL,
     PRIMARY KEY (numeroVuelo),
@@ -55,9 +55,9 @@ CREATE TABLE Rutas(
 );
 
 CREATE TABLE Aeronave(
-    matricula varchar(10) NOT NULL,
-    marca varchar(40) NOT NULL,
-    capacidadPasajeros int NOT NULL,
+    matricula VARCHAR(10) NOT NULL,
+    marca VARCHAR(40) NOT NULL,
+    capacidadPasajeros INT NOT NULL,
     capacidadPeso FLOAT NOT NULL,
     modelo INT NOT NULL,
     PRIMARY KEY (matricula)
@@ -77,7 +77,7 @@ CREATE TABLE Viaje(
 
 
 CREATE TABLE ViajeXEmpleado(
-	codigoEmpleado int NOT NULL,
+	codigoEmpleado INT NOT NULL,
 	codigoViaje INT NOT NULL,
 	PRIMARY KEY(codigoEmpleado, codigoViaje),
 	FOREIGN KEY (codigoEmpleado) REFERENCES Empleados(codigoEmpleado),
@@ -96,14 +96,14 @@ CREATE TABLE Boletos(
 	CHECK (Posicion IN ('A','B','C','D'))
 );
 
-INSERT INTO Aeropuerto VALUES ('SJO', 'Aeropuerto Internacional Juan Santamaría', 'San José', 'Costa Rica');
+INSERT INTO Aeropuerto VALUES ('SJO', 'Aeropuerto INTernacional Juan Santamaría', 'San José', 'Costa Rica');
 INSERT INTO Aeropuerto VALUES ('SAL', 'Aeropuerto Monseñor Oscar Arnulfo Romero', 'San Salvador', 'El Salvador');
 INSERT INTO Aeropuerto VALUES ('HOU', 'Aeropuerto William P. Hobby', 'Houston', 'Estados Unidos');
-INSERT INTO Aeropuerto VALUES ('JFK', 'Aeropuerto Internacional John F. Kennedy', 'Nueva York', 'Estados Unidos');
-INSERT INTO Aeropuerto VALUES ('LAX', 'Aeropuerto Internacional de Los Angeles', 'Los Angeles', 'Estados Unidos');
+INSERT INTO Aeropuerto VALUES ('JFK', 'Aeropuerto INTernacional John F. Kennedy', 'Nueva York', 'Estados Unidos');
+INSERT INTO Aeropuerto VALUES ('LAX', 'Aeropuerto INTernacional de Los Angeles', 'Los Angeles', 'Estados Unidos');
 INSERT INTO Aeropuerto VALUES ('MIA', 'Aeropuerto de Miami', 'Miami', 'Estados Unidos');
-INSERT INTO Aeropuerto VALUES ('GUA', 'Aeropuerto Internacional La Aurora', 'Ciudad de Guatemala', 'Guatemala');
+INSERT INTO Aeropuerto VALUES ('GUA', 'Aeropuerto INTernacional La Aurora', 'Ciudad de Guatemala', 'Guatemala');
 INSERT INTO Aeropuerto VALUES ('TGU', 'Aeropuerto de Toncontín', 'Tegucigalpa', 'Honduras');
-INSERT INTO Aeropuerto VALUES ('MEX', 'Aeropuerto Internacional Benito Juárez', 'Ciudad de México', 'México');
-INSERT INTO Aeropuerto VALUES ('MGA', 'Aeropuerto Internacional C. Sandino', 'Managua', 'Nicaragua');
-INSERT INTO Aeropuerto VALUES ('PTY', 'Aeropuerto Internacional de Tocumen', 'Ciudad de Panamá', 'Panamá');
+INSERT INTO Aeropuerto VALUES ('MEX', 'Aeropuerto INTernacional Benito Juárez', 'Ciudad de México', 'México');
+INSERT INTO Aeropuerto VALUES ('MGA', 'Aeropuerto INTernacional C. Sandino', 'Managua', 'Nicaragua');
+INSERT INTO Aeropuerto VALUES ('PTY', 'Aeropuerto INTernacional de Tocumen', 'Ciudad de Panamá', 'Panamá');

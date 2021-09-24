@@ -5,19 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-
-    <!-- referencia al css del login -->
-    <link rel="stylesheet" href="../css/login.css"/>
 
     <title>Registrar idiomas</title>
   </head>
   <body>
-
-    <!--h1>Iniciar sesion</h1-->
-
    
     <div class="container w-75  mt-5 rounded shadow" style="background:#F5F5F5;">
       
@@ -44,11 +36,11 @@
 			  </div>			
            
         <div class="d-grid">
-          <button type="submit" class="btn btn-primary">Registrar idiomas</button>
+          <button type="submit" class="btn btn-primary">Registrar idioma</button>
         </div><br>
 
         <div class="d-grid">
-          <a href="../index.php" class="btn btn-primary">Regresar atrás</a>       
+          <a href="../index.php" class="btn btn-primary">Regresar</a>       
         </div>
 
       </form> 

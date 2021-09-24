@@ -35,8 +35,6 @@
 <body id="body-pd" style="margin-top:7%;">
 
 
-
-
     <main class="main" style="width:95%;margin-right:10%;">
         <!--div id="contents" style="background: red;width:90%;margin-right:10%;"-->
  
@@ -65,7 +63,6 @@
         <div class="tab-pane fade" id="empleadosIdiomas" role="tabpanel" aria-labelledby="empleadosIdiomas-tab" style="width:100%">
             <div class="alert alert-primary" role="alert">
                 <h2><span style="color:blue">Empleados idiomas</span></h2>
-                Falta terminarlo!
             </div>
             <br>
             <?php
@@ -111,7 +108,7 @@
 
         <div class="tab-pane fade" id="aeronave" role="tabpanel" aria-labelledby="aeronave-tab" style="width:100%">
             <div class="alert alert-primary" role="alert">
-                <h2><span style="color:blue">Aeronave</span></h2>
+                <h2><span style="color:blue">Aerolineas</span></h2>
             </div>
             <?php
                                 
@@ -124,9 +121,11 @@
         <div class="tab-pane fade" id="boletosAereos" role="tabpanel" aria-labelledby="boletosAereos-tab" style="width:100%">
             <div class="alert alert-primary" role="alert">
                 <h2><span style="color:blue">VIAJES</span></h2>
-                No implementado!!!
-
             </div>
+            <a href="XML_listaVuelos/script_lista_vuelos.php">IR lista</a>
+            
+            <a href="XML_listaVuelos/ver_xml.php">XML</a>
+
         </div>
 
 
@@ -241,7 +240,7 @@
                         <i class='bx bxs-shopping-bags nav__icon'></i>
                         <!--i class='bx bxs-plane-take-off nav__logo-icon'></i-->
                         <span class="nav__name">
-                            VIAJES
+                            Viajes
                         </span>
                     </a>
 

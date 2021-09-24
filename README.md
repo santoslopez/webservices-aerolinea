@@ -11,4 +11,10 @@ Diagrama utilizado para la creación del script de la base de datos.
 # Archivo index.php
 Dashboard principal del sistema 
 
-# Actualmente el permite registrar, modificar y listar en : empleados, aeropuerto, rutas, viajes, idiomas, aeronave,
+# El sistema permite:
+Registrar, modificar, eliminar listar en : empleados, idiomas que domina empleados, aeropuerto, rutas, viajes, idiomas, aerolinea, etc.
+
+# Web services
+Actualmente implementado script_lista_vuelos sin embargo le falta indicarle que recibe parametros.
+
+

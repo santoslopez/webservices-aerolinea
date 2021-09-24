@@ -54,7 +54,11 @@
            
       <div class="d-grid">
         <button type="submit" class="btn btn-primary">Modificar Viaje</button>
-      </div>
+      </div><br>
+
+        <div class="d-grid">
+          <a href="../index.php" class="btn btn-primary" style="margin-bottom: 15px;">Regresar</a>       
+        </div>
 
         </form>    
    
