@@ -44,8 +44,7 @@
             <div class="alert alert-primary" role="alert">
                 <h3><span>Listado idiomas</span> </h3>
             </div>            
-            <?php
-                                
+            <?php        
                 include 'idiomas/listadoIdiomas.php';    
             ?>
         </div>
@@ -54,8 +53,7 @@
                 <h2><span style="color:blue">Empleados</span></h2>
             </div>
             <br>
-            <?php
-                                
+            <?php           
                 include 'empleados/listadoEmpleados.php';    
             ?>
         </div>
@@ -75,8 +73,7 @@
             <div class="alert alert-primary" role="alert">
                 <h2><span style="color:blue">Aeropuerto</span></h2>
             </div>
-            <?php
-                                
+            <?php       
                 include 'aeropuerto/listadoAeropuerto.php';    
             ?>
         </div>
@@ -85,8 +82,7 @@
             <div class="alert alert-primary" role="alert">
                 <h2><span style="color:blue">Rutas</span></h2>
             </div>
-            <?php
-                                
+            <?php            
                 include 'rutas/listadoRutas.php';    
             ?>
 
@@ -96,13 +92,18 @@
             <div class="alert alert-primary" role="alert">
                 <h2><span style="color:blue">Viajes</span></h2>
             </div>
-
-
-            <?php
-                                
+            <?php              
                 include 'viajes/listadoViajes.php';    
             ?>
+        </div>
 
+        <div class="tab-pane fade" id="viajesEmpleados" role="tabpanel" aria-labelledby="viajes-tab" style="width:100%">
+            <div class="alert alert-primary" role="alert">
+                <h2><span style="color:blue">Viajes por Empleado</span></h2>
+            </div>
+            <?php              
+                include 'viajesEmpleados/listadoEmpleadosViajes.php';    
+            ?>
         </div>
 
 
@@ -110,8 +111,7 @@
             <div class="alert alert-primary" role="alert">
                 <h2><span style="color:blue">Aerolineas</span></h2>
             </div>
-            <?php
-                                
+            <?php         
                 include 'aeronave/listadoAeronave.php';    
             ?>
         </div>
@@ -249,6 +249,15 @@
                         <!--i class='bx bxs-plane-take-off nav__logo-icon'></i-->
                         <span class="nav__name">
                             Viajes
+                        </span>
+                    </a>
+
+                    <!-- VIAJES -->
+                    <a class="nav-link" id="viajes-tab" data-toggle="pill" href="#viajesEmpleados"  role="tab" aria-controls="viajes" aria-selected="false">
+                        <i class='bx bxs-shopping-bags nav__icon'></i>
+                        <!--i class='bx bxs-plane-take-off nav__logo-icon'></i-->
+                        <span class="nav__name">
+                            Viajes por Empleados
                         </span>
                     </a>
 

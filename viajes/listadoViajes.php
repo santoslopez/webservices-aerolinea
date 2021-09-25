@@ -44,6 +44,7 @@
                     <th scope="col">Matrícula</th>
                     <th scope="col">Modificar</th>
                     <th scope="col">Eliminar</th>
+                    <th scope="col">Asignar tripulacion</th>
                 </tr>
             </thead>
 
@@ -55,12 +56,14 @@
                 echo "<td>$row[2]</td>";
                 echo "<td>$row[3]</td>";
                 echo "<td>$row[4]</td>";       
-                // ccodigoAeropuertoModificar, nuevoNombreAeropuerto y nuevoCiudadAeropuerto: se va recuperar en los formularios para modificar datos. El nombre se le pudo poner otro.
+                
                 echo "<td><a href=viajes/formularioModificarViaje.php?codigoViaje=".urlencode($row[0])."&precio=".urlencode($row[1])."&fecha=".urlencode($row[2])."&numeroVuelo=".urlencode($row[3])."&matricula=".urldecode($row[4])."><img src='img/refresh.png' class='zoomImagen' alt='Actualizar contenido' style='width:15%;heigth:15%;align:rigth'></a></td>";
 
-                // codigoIdiomaEliminar: se recupera en queryEliminarIdiomasDomina.php
                 echo "<td><a href=viajes/queryEliminarViaje.php?codigoViaje=$row[0] class=opcionEliminarLenguas><img src='img/x-button.png' class='zoomImagen' alt='Eliminar contenido' style='width:15%;heigth:15%'></a></td>";
                 
+                echo "<td><a href=viajesEmpleados/formularioRegistrarEmpleadosViajes.php?codigoViaje=".urlencode($row[0])."&precio=".urlencode($row[1])."&fecha=".urlencode($row[2])."&numeroVuelo=".urlencode($row[3])."&matricula=".urldecode($row[4])."><img src='img/plus.png' class='zoomImagen' alt='Eliminar contenido' style='width:15%;heigth:15%'></a></td>";
+
+     
                 echo "</tr>";                                               
             }
             echo "</tbody>
