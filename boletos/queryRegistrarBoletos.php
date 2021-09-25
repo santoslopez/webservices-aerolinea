@@ -4,51 +4,46 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Registrar viaje</title>
-
+	<title>Registro de aeronave</title>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>  
 	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
-
 </head>
 <body>
-	
-</body>
-</html>
 
 <?php
 
 	include '../conexion/conexion.php';
-	
-	$precio = $_POST['precio'];
-	$fecha = $_POST['fecha'];
-	$numeroVuelo = $_POST['numeroVuelo'];
-	$matricula = $_POST['matricula'];
 
-	if(!isset($precio, $fecha, $numeroVuelo, $matricula)) {
+	$nombre = $_POST['nombre'];
+	$fila = $_POST['fila'];
+	$posicion = $_POST['posicion'];
+	$codigo = $_POST['codigo'];
+
+
+	if(!isset($nombre, $fila, $posicion, $codigo)) {
 		header('Location: ../index.php');
 		//exit('Por favor ingresa el nombre de usuario y password.');
 	}else {
 
-	$verificarViaje = "SELECT * FROM Viaje WHERE fecha = $1 AND numeroVuelo = $2 AND matricula = $3";
+	$verificarBoleto = "SELECT * FROM Boletos WHERE nombrePasajero = $1 AND fila = $2 AND posicion = $3 AND codigoViaje = $4 ";
 	
-	pg_prepare($conexion,"prepareVerificarViaje",$verificarViaje) or die("Cannot prepare statement.");
+	pg_prepare($conexion,"prepareVerificarBoleto",$verificarBoleto) or die("Cannot prepare statement.");
 	
-	$ejecutarConsultaVerificarViaje = pg_execute($conexion,"prepareVerificarViaje",array($precio, $fecha, $numeroVuelo, $matricula));
+	$ejecutarConsultaVerificarBoleto = pg_execute($conexion,"prepareVerificarBoleto",array($nombre, $fila, $posicion, $codigo));
 
-	if (pg_num_rows($ejecutarConsultaVerificarViaje)) {
-        alert("El Vuelo ya ha sido programado");
+	if (pg_num_rows($ejecutarConsultaVerificarBoleto)) {
+        alert("El boleto ya esta registrado");
+
 	}else {
 
-		$consulta  = sprintf("INSERT INTO Viaje (precio, fecha, numeroVuelo, matricula) VALUES('%s','%s','%s','%s');",
-		pg_escape_string($precio),
-		pg_escape_string($fecha),
-		pg_escape_string($numeroVuelo),
-		pg_escape_string($matricula)
-
+		$consulta  = sprintf("INSERT INTO Boletos(nombrePasajero, fila, posicion, codigoViaje) VALUES('%s','%s','%s','%s');",
+		pg_escape_string($nombre),
+		pg_escape_string($fila),
+		pg_escape_string($posicion),
+		pg_escape_string($codigo)
 		);
-
 		$ejecutarConsulta = pg_query($conexion, $consulta);
 	
 		/*** Sino hay ningun error*/
@@ -56,21 +51,20 @@
 			echo "<script>
 			Swal.fire({
 				icon: 'success',
-				title: 'Datos registrados de viaje',
-				text: 'Los datos se guardaron de viaje',
-				footer: '<a>Datos guardados correctamente en rutas.</a>'
+				title: 'Datos registrados',
+				text: 'Los datos se guardaron',
+				footer: '<a>Datos guardados correctamente.</a>'
 		  }).then(function() {
 			window.location = '../index.php';
 		});
 		  
 		  </script>";
-			
 		}else{
 			echo "<script>
 			Swal.fire({
 				icon: 'error',
-				title: 'Datos no guardados en viajes',
-				text: 'Los datos no se guardaron en viajes',
+				title: 'Datos no guardados',
+				text: 'Los datos no se guardaron',
 				footer: '<a>Error los datos no se guardaron.</a>'
 		  }).then(function() {
 			window.location = '../index.php';
@@ -84,3 +78,7 @@
 
 	}
 ?>
+
+
+</body>
+</html>

@@ -10,7 +10,7 @@
 
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 
-    <title>Aerolinea</title>
+    <title>Aerolinea proyecto cc6</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -92,7 +92,7 @@
 
         </div>
 
-        <div class="tab-pane fade" id="viajes" role="tabpanel" aria-labelledby="rutas-tab" style="width:100%">
+        <div class="tab-pane fade" id="viajes" role="tabpanel" aria-labelledby="viajes-tab" style="width:100%">
             <div class="alert alert-primary" role="alert">
                 <h2><span style="color:blue">Viajes</span></h2>
             </div>
@@ -114,18 +114,30 @@
                                 
                 include 'aeronave/listadoAeronave.php';    
             ?>
-
         </div>
 
 
         <div class="tab-pane fade" id="boletosAereos" role="tabpanel" aria-labelledby="boletosAereos-tab" style="width:100%">
             <div class="alert alert-primary" role="alert">
-                <h2><span style="color:blue">VIAJES</span></h2>
+              
+                <h2><span style="color:blue">Boletos Aéreos</span></h2>
             </div>
-            <a href="XML_listaVuelos/script_lista_vuelos.php">IR lista</a>
+            <?php                    
+                include 'boletos/listadoBoletos.php';    
+            ?>
             
-            <a href="XML_listaVuelos/ver_xml.php">XML</a>
+        </div>
 
+        <div class="tab-pane fade" id="webservices" role="tabpanel" aria-labelledby="webservices-tab" style="width:100%">
+            <div class="alert alert-primary" role="alert">
+              
+                <h2><span style="color:blue">Webservices</span></h2>
+
+                script_lista_vuelos: No implementado con argumentos todavía. <br>
+                <a href="XML_listaVuelos/script_lista_vuelos.php">IR script_lista_vuelos</a><br>
+                <a href="XML_listaVuelos/ver_xml.php">XML lista VUELOS</a><br>
+            </div>
+           
         </div>
 
 
@@ -141,12 +153,8 @@
                 <a href="https://flaticon.com" >Iconos</a><br>
                 <a href="https://boxicons.com/?query=bag" >Iconos menu</a><br>
 
-
             </div>
         </div>
-
-
-
 
     </div>
         <!--/div-->
@@ -180,7 +188,7 @@
                 <div  class="nav nav-tabs nav__list" id="nav-tab" role="tablist">
 
                     <!-- AERONAVE -->
-                    <a class="nav-link" id="rutas-tab" data-toggle="pill" href="#aeronave"  role="tab" aria-controls="aeronave" aria-selected="false">
+                    <a class="nav-link" id="aeronave-tab" data-toggle="pill" href="#aeronave"  role="tab" aria-controls="aeronave" aria-selected="false">
                         <i class='bx bxs-plane nav__icon'></i>
                         <!--i class='bx bxs-plane-take-off nav__logo-icon'></i-->
                         <span class="nav__name">
@@ -236,7 +244,7 @@
                     </a>
 
                     <!-- VIAJES -->
-                    <a class="nav-link" id="rutas-tab" data-toggle="pill" href="#viajes"  role="tab" aria-controls="viajes" aria-selected="false">
+                    <a class="nav-link" id="viajes-tab" data-toggle="pill" href="#viajes"  role="tab" aria-controls="viajes" aria-selected="false">
                         <i class='bx bxs-shopping-bags nav__icon'></i>
                         <!--i class='bx bxs-plane-take-off nav__logo-icon'></i-->
                         <span class="nav__name">
@@ -245,23 +253,32 @@
                     </a>
 
                     <!-- BOLETOS AEREOS -->
-                    <a class="nav-link" id="rutas-tab" data-toggle="pill" href="#boletosAereos"  role="tab" aria-controls="boletosAereos" aria-selected="false">
+                    <a class="nav-link" id="boletosAereos-tab" data-toggle="pill" href="#boletosAereos"  role="tab" aria-controls="boletosAereos" aria-selected="false">
                         <i class='bx bx-money nav__icon'></i>
                         <!--i class='bx bxs-plane-take-off nav__logo-icon'></i-->
                         <span class="nav__name">
                            Boletos aereos
                         </span>
                     </a>
+
+                    <!-- BOLETOS AEREOS -->
+                    <a class="nav-link" id="webservices-tab" data-toggle="pill" href="#webservices"  role="tab" aria-controls="webservices" aria-selected="false">
+                        <i class='bx bx-money nav__icon'></i>
+                        <!--i class='bx bxs-plane-take-off nav__logo-icon'></i-->
+                        <span class="nav__name">
+                           Webservices
+                        </span>
+                    </a>
+ 
+
                     
                      <!-- Acerca -->
-                    <a href="#acerca" class="nav-link" data-toggle="pill" id="acerca-tab"  href="#acerca" role="tab" aria-controls="acerca" aria-selected="false">
+                    <a class="nav-link" id="acerca-tab" data-toggle="pill"  href="#acerca"  role="tab" aria-controls="acerca" aria-selected="false">
                         <i class='bx bx-info-circle nav__icon'></i>
                             <span class="nav__name">
                                 Acerca
                             </span>
                     </a>  
-                
-
                 </div>
             </div>
 
