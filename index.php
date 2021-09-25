@@ -10,7 +10,7 @@
 
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 
-    <title>Aerolinea proyecto cc6</title>
+    <title>Aerolinea proyecto CC6</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -121,21 +121,11 @@
             <div class="alert alert-primary" role="alert">
               
                 <h2><span style="color:blue">Boletos Aéreos</span></h2>
-<<<<<<< HEAD
-=======
-            </div>
-                <?php                    
-                    include 'boletos/listadoBoletos.php';    
-                ?>
-
-                <h2><span style="color:blue">VIAJES</span></h2>
->>>>>>> 575de562fe290bffe2f1828b4e2554a06debb802
             </div>
             <?php                    
                 include 'boletos/listadoBoletos.php';    
             ?>
             
-<<<<<<< HEAD
         </div>
 
         <div class="tab-pane fade" id="webservices" role="tabpanel" aria-labelledby="webservices-tab" style="width:100%">
@@ -148,9 +138,6 @@
                 <a href="XML_listaVuelos/ver_xml.php">XML lista VUELOS</a><br>
             </div>
            
-=======
-            <a href="XML_listaVuelos/ver_xml.php">XML</a>
->>>>>>> 575de562fe290bffe2f1828b4e2554a06debb802
         </div>
 
 
@@ -292,10 +279,6 @@
                                 Acerca
                             </span>
                     </a>  
-<<<<<<< HEAD
-=======
-                
->>>>>>> 575de562fe290bffe2f1828b4e2554a06debb802
                 </div>
             </div>
 
