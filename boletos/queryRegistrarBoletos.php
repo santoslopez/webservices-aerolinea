@@ -34,8 +34,17 @@
 	$ejecutarConsultaVerificarBoleto = pg_execute($conexion,"prepareVerificarBoleto",array($nombre, $fila, $posicion, $codigo));
 
 	if (pg_num_rows($ejecutarConsultaVerificarBoleto)) {
-        alert("El boleto ya esta registrado");
-
+		echo "<script>
+		Swal.fire({
+			icon: 'error',
+			title: 'Datos no registrados',
+			text: 'Los datos no se guardaron',
+			footer: '<a>Datos no se guardadoron. Ya esta en uso</a>'
+	  }).then(function() {
+		window.location = '../index.php';
+	});
+	  
+	  </script>";
 	}else {
 
 		$consulta  = sprintf("INSERT INTO Boletos(nombrePasajero, fila, posicion, codigoViaje) VALUES('%s','%s','%s','%s');",

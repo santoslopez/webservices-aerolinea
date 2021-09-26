@@ -38,13 +38,34 @@
       
       <div class="mb-4">
 				<label for="labelCiudadAeropuerto" class="form-label">Posición</label>
-				<input type="text" class="form-control" minlength="1" maxlength="1" aria-describedby="nameCiudad" name="posicion" required placeholder="Ingresa la posicion de la fila">
-			</div>	
+				<!--input type="text" class="form-control" minlength="1" maxlength="1" aria-describedby="nameCiudad" name="posicion" required placeholder="Ingresa la posicion de la fila"-->
+        <select name="posicion" required>
+          <option value="" selected>Seleccione</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+        </select>			
+      </div>	
 
       <div class="mb-4">
 				<label for="labelPaisAeropuerto" class="form-label">Codigo del Viaje</label>
-				<input type="number" class="form-control" min="1" aria-describedby="namePais" name="codigo" required placeholder="Ingresa la capacidad de pasajeros de la aeronave">
-			</div>
+				<!--input type="number" class="form-control" min="1" aria-describedby="namePais" name="codigo" required placeholder="Ingresa la capacidad de pasajeros de la aeronave"-->
+        <?php
+          include "../conexion/conexion.php";
+
+          $resultViaje=pg_query($conexion, "SELECT codigoViaje FROM Viaje");
+
+          echo "<select name='codigo'>\n";
+
+          while ($row= pg_fetch_row($resultViaje)) {
+              $codigo = $row[0];
+              echo "<option value='$codigo' id='opcion$codigo' selected='$codigo'>$codigo</option>";
+          }
+          echo "</select>";
+        ?>
+			
+      </div>
            
       <div class="d-grid">
         <button type="submit" class="btn btn-primary">Registrar boleto</button>

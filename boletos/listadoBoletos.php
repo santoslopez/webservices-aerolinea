@@ -2,19 +2,29 @@
 
     include 'conexion/conexion.php';    
 
-    $listadoBoletos = "SELECT numeroBoleto, nombrePasajero, fila, posicion, codigoViaje FROM Boletos";
-    $ejecutarConsultaObtenerInfo = pg_query($conexion,$listadoBoletos);
+    $listadoViaje = "SELECT * FROM Viaje";
+    $ejecutarConsultaObtenerInfoViaje = pg_query($conexion,$listadoViaje);
     
     // verificamos que existen registros, sino no dibujamos la tabla
-    if (!(pg_num_rows($ejecutarConsultaObtenerInfo))) {
+    if (!(pg_num_rows($ejecutarConsultaObtenerInfoViaje))) {
         echo "<div class='alert alert-danger' role='alert'>
-                No hay información de boletos.
+                No hay información de viajes registrados.
               </div>
-              <a href='boletos/formularioRegistrarBoletos.php'>Registrar boleto</a>";
+              ";
     }else{
-        
-                                        
-    # Si hay datos, entonces dibujamos el encabezado una sola vez
+
+        $listadoBoletos = "SELECT numeroBoleto, nombrePasajero, fila, posicion, codigoViaje FROM Boletos";
+        $ejecutarConsultaObtenerInfo = pg_query($conexion,$listadoBoletos);
+
+        if (!(pg_num_rows($ejecutarConsultaObtenerInfo))) {
+            echo "<div class='alert alert-danger' role='alert'>
+                    No hay información de boletos.
+                  </div>
+                  <a href='boletos/formularioRegistrarBoletos.php'>Registrar boleto</a>";
+        }else {
+            # code...
+
+                # Si hay datos, entonces dibujamos el encabezado una sola vez
     echo '<table class="table table-striped">
     <thead>
         <tr>
@@ -47,6 +57,11 @@
     echo "</tbody>
     </table>
     <a href='boletos/formularioRegistrarBoletos.php'>Registrar boleto</a>";
+
+
+        }
+                                        
+
     }
 ?> 
 
