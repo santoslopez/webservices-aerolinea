@@ -97,7 +97,11 @@
             ?>
         </div>
 
+<<<<<<< HEAD
         <div class="tab-pane fade" id="viajesEmpleados" role="tabpanel" aria-labelledby="viajesEmpleados-tab" style="width:100%">
+=======
+        <div class="tab-pane fade" id="viajesEmpleados" role="tabpanel" aria-labelledby="viajes-tab" style="width:100%">
+>>>>>>> da43fddc70ed2ae03500df1ddcf16b3d29d0686e
             <div class="alert alert-primary" role="alert">
                 <h2><span style="color:blue">Viajes por Empleado</span></h2>
             </div>
@@ -253,7 +257,11 @@
                     </a>
 
                     <!-- VIAJES -->
+<<<<<<< HEAD
                     <a class="nav-link" id="viajesEmpleados-tab" data-toggle="pill" href="#viajesEmpleados"  role="tab" aria-controls="viajesEmpleados" aria-selected="false">
+=======
+                    <a class="nav-link" id="viajes-tab" data-toggle="pill" href="#viajesEmpleados"  role="tab" aria-controls="viajes" aria-selected="false">
+>>>>>>> da43fddc70ed2ae03500df1ddcf16b3d29d0686e
                         <i class='bx bxs-shopping-bags nav__icon'></i>
                         <!--i class='bx bxs-plane-take-off nav__logo-icon'></i-->
                         <span class="nav__name">
