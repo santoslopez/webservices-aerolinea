@@ -29,7 +29,7 @@
         
         <div class="mb-4">
 				<label for="labelCodigoAeropuerto" class="form-label">Matrícula</label>
-				<input type="text" class="form-control"  minlength="1" maxlength="2" aria-describedby="nameCodigoAeropuerto" name="matricula" required placeholder="Ingresa matrícula de la aeronave" >
+				<input type="text" class="form-control"  minlength="1" maxlength="15" aria-describedby="nameCodigoAeropuerto" name="matricula" required placeholder="Ingresa matrícula de la aeronave" >
 			</div>	
 
         <div class="mb-4">

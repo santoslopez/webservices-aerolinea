@@ -27,9 +27,12 @@
           <form action="queryRegistrarViaje.php" method="POST">
 
         <div class="mb-4">
-				  <label for="labelNombreAeropuerto" class="form-label">Precio</label>
-				  <input type="text" class="form-control" minlength="1" maxlength="50" aria-describedby="nameAeropuerto" name="precio" required placeholder="Ingresa el precio del viaje" >
-			  </div>	
+          <label for="labelNombreAeropuerto" class="form-label">Precio</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Q.</span>
+            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" minlength="1" maxlength="50" aria-describedby="nameAeropuerto" name="precio" required placeholder="Ingresa el precio del viaje">
+          </div>
+        </div>
       
       <div class="mb-4">
 				<label for="labelCiudadAeropuerto" class="form-label">Fecha</label>

@@ -43,12 +43,62 @@
       
       <div class="mb-4">
 				<label for="labelCiudadAeropuerto" class="form-label">Posición</label>
-				<input type="text" class="form-control" minlength="1" maxlength="1" aria-describedby="nameCiudad" name="posicion" required value="<?=$_GET['posicion']?>">
+        <select name="posicion" class='form-select form-select-lg mb-3' aria-label='.form-select-lg example' required>
+        <option value="">Seleccione</option>
+        
+        <?php
+          $posicionregistrada = $_GET['posicion'];
+          switch($posicionregistrada){
+            case 'A': 
+              echo "<option value='A' selected> A </option>";
+              echo "<option value='B'> B </option>";
+              echo "<option value='C'> C </option>";
+              echo "<option value='D'> D </option>";
+              break;
+            case 'B': 
+              echo "<option value='A'> A </option>";
+              echo "<option value='B' selected> B </option>";
+              echo "<option value='C'> C </option>";
+              echo "<option value='D'> D </option>";
+              break;
+            case 'C': 
+              echo "<option value='A'> A </option>";
+              echo "<option value='B'> B </option>";
+              echo "<option value='C' selected> C </option>";
+              echo "<option value='D'> D </option>";
+              break;
+            case 'D': 
+              echo "<option value='A'> A </option>";
+              echo "<option value='B'> B </option>";
+              echo "<option value='C'> C </option>";
+              echo "<option value='D' selected> D </option>";
+              break;
+          }
+        ?>
+        </select>	
 			</div>	
 
       <div class="mb-4">
 				<label for="labelPaisAeropuerto" class="form-label">Codigo del Viaje</label>
-				<input type="number" class="form-control" min="1" aria-describedby="namePais" name="codigo" required value="<?=$_GET['codigoViaje']?>">
+        <?php
+          include "../conexion/conexion.php";
+
+          $resultViaje=pg_query($conexion, "SELECT codigoViaje FROM Viaje");
+
+          echo "<select name='codigo' class='form-select form-select-lg mb-3' aria-label='.form-select-lg example'>\n";
+          $codigoregistrado = $_GET['codigoViaje'];
+          while ($row= pg_fetch_row($resultViaje)) {
+              $codigo = $row[0];
+              if($codigoregistrado == $codigo){
+                echo "<option value='$codigo' selected='$codigo'> $codigo </option>";
+              }else{
+                echo "<option value='$codigo' id='opcion$codigo'>$codigo</option>";
+              }
+
+          }
+          echo "</select>";
+        ?>
+        
 			</div>
            
       <div class="d-grid">

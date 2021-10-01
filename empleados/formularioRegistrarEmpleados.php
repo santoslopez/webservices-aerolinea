@@ -20,7 +20,7 @@
         
      
         <div class="col bgRegistrarCuenta d-none d-lg-block col-md-5 col-xl-6 rounded" > 
-        <img class="aeronave" src="../img/officer.png" alt="Empleados" width="60%" height="60%" style="margin-top:25%;margin-left:15%;margin-rigth:15%">
+        <img class="aeronave" src="../img/officer.png" alt="Empleados" width="60%" height="60%" style="margin-top:25%;margin-left:15%;margin-right:15%">
 
         </div>
 

@@ -8,7 +8,6 @@ $ejecutarConsultaObtenerInfoViajes = pg_query($conexion,$listadoViajes);
 $listadoEmpleados = "SELECT * FROM Empleados";
 $ejecutarConsultaObtenerInfoEmpleados = pg_query($conexion,$listadoEmpleados);
 
-<<<<<<< HEAD
 
 $listadoRutas = "SELECT * FROM Rutas";
 $ejecutarConsultaObtenerInfoRutas = pg_query($conexion,$listadoRutas);
@@ -19,25 +18,16 @@ $listadoAeronaves = "SELECT matricula,marca,capacidadPasajeros,capacidadPeso,mod
 $ejecutarConsultaObtenerInfoAeronaves = pg_query($conexion,$listadoAeronaves);   
 
 
-=======
->>>>>>> da43fddc70ed2ae03500df1ddcf16b3d29d0686e
 // verificamos que existen registros, sino no dibujamos la tabla
 if (!(pg_num_rows($ejecutarConsultaObtenerInfoViajes))) {
     echo "<div class='alert alert-danger' role='alert' >
             No hay viajes registrados
-<<<<<<< HEAD
             </div>";
-=======
-            </div>
-            <a href='viajes/formularioRegistrarViaje.php'>Registrar Viaje</a>";
-
->>>>>>> da43fddc70ed2ae03500df1ddcf16b3d29d0686e
 }else if (!(pg_num_rows($ejecutarConsultaObtenerInfoEmpleados))) {
             echo "<div class='alert alert-danger' role='alert' >
                     No hay empleados registrados
                     </div>
                     <a href='empleados/formularioRegistrarEmpleados.php'>Registrar empleados</a>";
-<<<<<<< HEAD
 }else if (!(pg_num_rows($ejecutarConsultaObtenerInfoRutas))) {
     echo "<div class='alert alert-danger' role='alert' >
             No hay rutas registradas.
@@ -48,8 +38,6 @@ if (!(pg_num_rows($ejecutarConsultaObtenerInfoViajes))) {
                 No hay aeronaves registradas.
             </div>
             <a href='aeronave/formularioRegistrarAeronave.php'>Registrar rutas</a>";
-=======
->>>>>>> da43fddc70ed2ae03500df1ddcf16b3d29d0686e
 
 }else{
 
