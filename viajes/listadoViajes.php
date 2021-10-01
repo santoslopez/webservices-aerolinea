@@ -8,6 +8,8 @@
     $listadoRutas = "SELECT * FROM Rutas";
     $ejecutarConsultaObtenerInfoRutas = pg_query($conexion,$listadoRutas);       
 
+
+
     // verificamos que existen registros, sino no dibujamos la tabla
     if (!(pg_num_rows($ejecutarConsultaObtenerInfoAeronaves))) {
         echo "<div class='alert alert-danger' role='alert'>
@@ -21,16 +23,24 @@
                 No hay informacion de rutas registrados actualmente.
                 </div>
                 ";
+    
     }else{
         
+    
+    
         $listadoViaje = "SELECT codigoViaje, precio, fecha, numeroVuelo, matricula FROM Viaje";
         $ejecutarConsultaObtenerInfo = pg_query($conexion,$listadoViaje);   
+
+        $listadoEmpleados = "SELECT * FROM Empleados";
+        $ejecutarConsultaObtenerInfoEmpleados = pg_query($conexion,$listadoEmpleados);  
+    
 
         if (!(pg_num_rows($ejecutarConsultaObtenerInfo))) {
             echo "<div class='alert alert-danger' role='alert'>
                     No hay VIAJES registrados actualmente.
                     </div>
-                    <a href='viajes/formularioRegistrarViaje.php'>Registrar Viaje</a>";
+                    <a href='viajes/formularioRegistrarViaje.php'>Registrar Viaje</a>";  
+    
         }else{
         
             # Si hay datos, entonces dibujamos el encabezado una sola vez
@@ -61,7 +71,13 @@
 
                 echo "<td><a href=viajes/queryEliminarViaje.php?codigoViaje=$row[0] class=opcionEliminarLenguas><img src='img/x-button.png' class='zoomImagen' alt='Eliminar contenido' style='width:15%;heigth:15%'></a></td>";
                 
-                echo "<td><a href=viajesEmpleados/formularioRegistrarEmpleadosViajes.php?codigoViaje=".urlencode($row[0])."&precio=".urlencode($row[1])."&fecha=".urlencode($row[2])."&numeroVuelo=".urlencode($row[3])."&matricula=".urldecode($row[4])."><img src='img/plus.png' class='zoomImagen' alt='Eliminar contenido' style='width:15%;heigth:15%'></a></td>";
+                if  (!(pg_num_rows($ejecutarConsultaObtenerInfoEmpleados))) {
+                    echo "<td><a href='#'><img src='img/block.png' class='zoomImagen' alt='Eliminar contenido' style='width:15%;heigth:15%'>Sin empleados</a></td>";
+ 
+                }else {
+                    # code...
+                    echo "<td><a href=viajesEmpleados/formularioRegistrarEmpleadosViajes.php?codigoViaje=".urlencode($row[0])."&precio=".urlencode($row[1])."&fecha=".urlencode($row[2])."&numeroVuelo=".urlencode($row[3])."&matricula=".urldecode($row[4])."><img src='img/plus.png' class='zoomImagen' alt='Eliminar contenido' style='width:15%;heigth:15%'></a></td>";
+                }
 
      
                 echo "</tr>";                                               

@@ -38,8 +38,7 @@
       
       <div class="mb-4">
 				<label for="labelCiudadAeropuerto" class="form-label">Posición</label>
-				<!--input type="text" class="form-control" minlength="1" maxlength="1" aria-describedby="nameCiudad" name="posicion" required placeholder="Ingresa la posicion de la fila"-->
-        <select name="posicion" required>
+        <select name="posicion" class='form-select form-select-lg mb-3' aria-label='.form-select-lg example' required>
           <option value="" selected>Seleccione</option>
           <option value="A">A</option>
           <option value="B">B</option>
@@ -50,13 +49,12 @@
 
       <div class="mb-4">
 				<label for="labelPaisAeropuerto" class="form-label">Codigo del Viaje</label>
-				<!--input type="number" class="form-control" min="1" aria-describedby="namePais" name="codigo" required placeholder="Ingresa la capacidad de pasajeros de la aeronave"-->
         <?php
           include "../conexion/conexion.php";
 
           $resultViaje=pg_query($conexion, "SELECT codigoViaje FROM Viaje");
 
-          echo "<select name='codigo'>\n";
+          echo "<select name='codigo' class='form-select form-select-lg mb-3' aria-label='.form-select-lg example'>\n";
 
           while ($row= pg_fetch_row($resultViaje)) {
               $codigo = $row[0];

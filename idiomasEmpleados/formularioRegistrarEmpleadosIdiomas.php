@@ -88,7 +88,7 @@
         </div><br>
 
         <div class="d-grid">
-          <a href="../index.php" class="btn btn-primary">Regresar atrás</a>       
+          <a href="../index.php" class="btn btn-primary">Regresar</a>       
         </div>
 
       </form> 

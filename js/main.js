@@ -7,6 +7,7 @@ const showNavBar = (toggleId, navId,bodyId,headerId) =>{
     bodypd = document.getElementById(bodyId),
     headerypd = document.getElementById(headerId);
 
+    nav.classList.toggle('show')
 
 
     // validate that all variables exist

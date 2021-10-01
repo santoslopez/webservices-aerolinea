@@ -35,7 +35,7 @@
 	
 	pg_prepare($conexion,"prepareVerificarViaje",$verificarViaje) or die("Cannot prepare statement.");
 	
-	$ejecutarConsultaVerificarViaje = pg_execute($conexion,"prepareVerificarViaje",array($precio, $fecha, $numeroVuelo, $matricula));
+	$ejecutarConsultaVerificarViaje = pg_execute($conexion,"prepareVerificarViaje",array( $fecha, $numeroVuelo, $matricula));
 
 	if (pg_num_rows($ejecutarConsultaVerificarViaje)) {
         alert("El Vuelo ya ha sido programado");

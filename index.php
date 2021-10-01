@@ -32,14 +32,14 @@
 
 
 </head>
-<body id="body-pd" style="margin-top:7%;">
+<body id="body-pd" style="margin-top:7%;margin-left:10%">
 
 
-    <main class="main" style="width:95%;margin-right:10%;">
+    <main class="main" style="width:95%;margin-right:20%;">
         <!--div id="contents" style="background: red;width:90%;margin-right:10%;"-->
  
         <div class="tab-content" id="v-pills-tabContent" style="width:90%;margin-right:10%;margin-top:40px;">
-        <div class="tab-pane fade show active" id="idiomas" role="tabpanel" aria-labelledby="idiomas-tab" style="width:100%">
+        <div class="tab-pane fade" id="idiomas" role="tabpanel" aria-labelledby="idiomas-tab" style="width:100%">
         
             <div class="alert alert-primary" role="alert">
                 <h3><span>Listado idiomas</span> </h3>
@@ -97,11 +97,7 @@
             ?>
         </div>
 
-<<<<<<< HEAD
         <div class="tab-pane fade" id="viajesEmpleados" role="tabpanel" aria-labelledby="viajesEmpleados-tab" style="width:100%">
-=======
-        <div class="tab-pane fade" id="viajesEmpleados" role="tabpanel" aria-labelledby="viajes-tab" style="width:100%">
->>>>>>> da43fddc70ed2ae03500df1ddcf16b3d29d0686e
             <div class="alert alert-primary" role="alert">
                 <h2><span style="color:blue">Viajes por Empleado</span></h2>
             </div>
@@ -137,7 +133,6 @@
               
                 <h2><span style="color:blue">Webservices</span></h2>
 
-                script_lista_vuelos: No implementado con argumentos todavía. <br>
                 <a href="XML_listaVuelos/script_lista_vuelos.php">IR script_lista_vuelos</a><br>
                 <a href="XML_listaVuelos/ver_xml.php">XML lista VUELOS</a><br>
             </div>
@@ -145,17 +140,22 @@
         </div>
 
 
-        <div class="tab-pane fade" id="acerca" role="tabpanel" aria-labelledby="acerca-tab" style="width:100%">
+        <div class="tab-pane fade show active" id="acerca" role="tabpanel" aria-labelledby="acerca-tab" style="width:100%">
             <div class="alert alert-primary" role="alert">
                 <h2><span style="color:blue">Acerca</span></h2>
-                Proyecto aerolínea, curso CC6 2021.
+                Proyecto Aerolínea - Curso CC6 2021.
 
-                <H3>Diseño</H3>
-                <a href="https://www.youtube.com/watch?v=C6227evfBig" >autor</a><br>
+                <h3>Integrantes</h3>
+                <span>Elvis Suc</span><br>
+                <span>Santos López Tzoy </span><br>
+
+
+                <h3>Diseño</h3>
+                El diseño está inspirado de la  <a href="https://www.youtube.com/watch?v=C6227evfBig" >versión original</a><br>
 
                 <h3>Iconos</h3>
-                <a href="https://flaticon.com" >Iconos</a><br>
-                <a href="https://boxicons.com/?query=bag" >Iconos menu</a><br>
+                by <a href="https://flaticon.com" >FlatIcon</a><br>
+                by <a href="https://boxicons.com/?query=bag" >Boxicons</a><br>
 
             </div>
         </div>
@@ -176,7 +176,7 @@
         </div>
     </header>
 
-    <div class="l-navbar" id="nav-bar" >
+    <div class="l-navbar" id="nav-bar">
         <nav class="nav">
             <div id="v-pills-tab">  
                 <a href="#" class="nav__logo">
@@ -191,6 +191,13 @@
                 
                 <div  class="nav nav-tabs nav__list" id="nav-tab" role="tablist">
 
+                    <!-- Acerca -->
+                    <a class="nav-link" id="acerca-tab" data-toggle="pill"  href="#acerca"  role="tab" aria-controls="acerca" aria-selected="true" aria-label="Home">
+                        <i class='bx bx-info-circle nav__icon'></i>
+                            <span class="nav__name">
+                                Acerca
+                            </span>
+                    </a> 
                     <!-- AERONAVE -->
                     <a class="nav-link" id="aeronave-tab" data-toggle="pill" href="#aeronave"  role="tab" aria-controls="aeronave" aria-selected="false">
                         <i class='bx bxs-plane nav__icon'></i>
@@ -202,7 +209,7 @@
                     
                     <!-- AEROPUERTO -->
                     <a class="nav-link" id="aeropuerto-tab" data-toggle="pill" href="#aeropuerto"  role="tab" aria-controls="aeropuerto" aria-selected="false">
-                        <i class='bx bxs-plane-take-off nav__logo-icon'></i>
+                        <i class='bx bxs-plane-take-off nav__icon'></i>
                         <!--i class='bx bxs-plane-take-off nav__logo-icon'></i-->
                         <span class="nav__name">
                             Aeropuerto
@@ -211,7 +218,7 @@
 
                 <!-- Idiomas -->
 
-                <a class="nav-link" id="idiomas-tab" data-toggle="pill" href="#idiomas"  role="tab" aria-controls="idiomas" aria-selected="true" aria-label="Home">            
+                <a class="nav-link" id="idiomas-tab" data-toggle="pill" href="#idiomas"  role="tab" aria-controls="idiomas" aria-selected="false" >            
                     <i class='bx bxs-flag-alt nav__icon'></i>       
                     <span class="nav__name">
                         Idiomas
@@ -257,11 +264,7 @@
                     </a>
 
                     <!-- VIAJES -->
-<<<<<<< HEAD
                     <a class="nav-link" id="viajesEmpleados-tab" data-toggle="pill" href="#viajesEmpleados"  role="tab" aria-controls="viajesEmpleados" aria-selected="false">
-=======
-                    <a class="nav-link" id="viajes-tab" data-toggle="pill" href="#viajesEmpleados"  role="tab" aria-controls="viajes" aria-selected="false">
->>>>>>> da43fddc70ed2ae03500df1ddcf16b3d29d0686e
                         <i class='bx bxs-shopping-bags nav__icon'></i>
                         <!--i class='bx bxs-plane-take-off nav__logo-icon'></i-->
                         <span class="nav__name">
@@ -287,15 +290,8 @@
                         </span>
                     </a>
  
-
                     
-                     <!-- Acerca -->
-                    <a class="nav-link" id="acerca-tab" data-toggle="pill"  href="#acerca"  role="tab" aria-controls="acerca" aria-selected="false">
-                        <i class='bx bx-info-circle nav__icon'></i>
-                            <span class="nav__name">
-                                Acerca
-                            </span>
-                    </a>  
+ 
                 </div>
             </div>
 
