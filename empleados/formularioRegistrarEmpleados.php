@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <title>Registrar empleados</title>
+    <script src="../js/validate.js"></script>
+
   </head>
   <body>
 
@@ -33,16 +33,24 @@
 
         <h2 class="fw-bold text-center pt-5 mb-5 py-5" style="padding-bottom: 0rem! important; margin-bottom: 1rem! important;">Registrar empleados</h2>
 
-        <form action="queryRegistrarEmpleados.php" method="POST">
+        <form action="queryRegistrarEmpleados.php" method="POST" class="row g-3 needs-validation" novalidate>
 			<div class="mb-4">
 				<label for="labelNombreApellidos" class="form-label">Nombre y apellidos</label>
 				<input type="text" class="form-control" minlength="1" maxlength="60" aria-describedby="ariaNombreApellidos" name="txtNombreApellidos" required placeholder="Ingresa nombre y apellidos" >
-			</div>	
+			
+        <div class="valid-feedback">
+            Datos ingresados.
+          </div>
+      
+      </div>	
       
       <div class="mb-4">
 				<label for="labelPuesto" class="form-label">Puesto</label>
 				<input type="text" class="form-control" minlength="1" maxlength="50" aria-describedby="ariaPuesto" name="txtPuesto" required placeholder="Ingrese puesto">
-			</div>	
+			  <div class="valid-feedback">
+            Datos ingresados.
+          </div>
+      </div>	
 
       <div class="mb-4">
 				<label for="labelHorasDeVuelo" class="form-label">Horas de vuelo</label>
@@ -52,17 +60,27 @@
       <div class="mb-4">
 				<label for="labelContactosEmergencia" class="form-label">Contactos de emergencia</label>
 				<input type="tel" class="form-control" pattern="[0-9]{4}-[0-9]{4}" aria-describedby="ariaContactosEmergencia" name="txtContactosEmergencia" required placeholder="Ingrese contactos de emergencia con formato 1234-5678">
-			</div>
+			  <div class="valid-feedback">
+            Datos ingresados.
+          </div>
+      </div>
       
       <div class="mb-4">
 				<label for="labelTiempoEmpresa" class="form-label">Tiempo en empresa</label>
 				<input type="number" class="form-control" min="0" aria-describedby="ariaTiempoEmpresa" name="txtTiempoEnEmpresa" required placeholder="Ingrese tiempos en empresa">
-			</div>
+			  <div class="valid-feedback">
+            Datos ingresados.
+          </div>
+      </div>
 
       <div class="mb-4">
 				<label for="labelNacionalidad" class="form-label">Nacionalidad</label>
 				<input type="text" class="form-control" minlength="1" maxlength="50" aria-describedby="ariaNacionalidad" name="txtNacionalidadEmpleado" required placeholder="Ingrese la nacionalidad">
-			</div>
+			  <div class="valid-feedback">
+            Datos ingresados.
+          </div>
+      
+      </div>
       
       <div class="d-grid">
         <button type="submit" class="btn btn-primary">Registrar empleados</button>
@@ -81,7 +99,10 @@
     </div>
 
   
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script>
+  validar();
+</script>
     </body>
 </html>

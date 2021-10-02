@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <link href="../css/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    
     <title>Registrar Viaje</title>
+    <script src="../js/validate.js"></script>
+
   </head>
   <body>
    
@@ -24,20 +24,26 @@
           
           <h2 class="fw-bold text-center pt-5 mb-5 py-5" style="padding-bottom:0rem!important; margin-bottom:1rem!important;">Registrar Viaje</h2>
 
-          <form action="queryRegistrarViaje.php" method="POST">
+          <form action="queryRegistrarViaje.php" method="POST" class="row g-3 needs-validation" novalidate>
 
         <div class="mb-4">
           <label for="labelNombreAeropuerto" class="form-label">Precio</label>
           <div class="input-group mb-3">
             <span class="input-group-text">Q.</span>
             <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" minlength="1" maxlength="50" aria-describedby="nameAeropuerto" name="precio" required placeholder="Ingresa el precio del viaje">
+            <div class="valid-feedback">
+            Datos ingresados.
+          </div>
           </div>
         </div>
       
       <div class="mb-4">
 				<label for="labelCiudadAeropuerto" class="form-label">Fecha</label>
 				<input type="date" class="form-control" aria-describedby="nameCiudad" name="fecha" required placeholder="Ingresa la fecha del viaje">
-			</div>	
+        <div class="valid-feedback">
+            Datos ingresados.
+          </div>
+      </div>	
 
       <div class="mb-4">
 				<label for="labelPaisAeropuerto" class="form-label">Numero de Vuelo</label>
@@ -54,6 +60,9 @@
             }
             echo "</select>";
         ?>
+           <div class="valid-feedback">
+            Datos ingresados.
+          </div>
 			</div>
 
       <div class="mb-4">
@@ -71,6 +80,9 @@
             }
             echo "</select>";
         ?>
+           <div class="valid-feedback">
+            Datos ingresados.
+          </div>
 			</div>	
            
         <div class="d-grid">
@@ -86,7 +98,11 @@
         </div>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script>
+  validar();
+</script>
     </body>
 </html>

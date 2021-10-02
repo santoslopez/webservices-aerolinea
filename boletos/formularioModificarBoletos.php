@@ -8,9 +8,11 @@
     <link href="../css/style.css" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     
     <title>Modificar boleto</title>
+    <script src="../js/validate.js"></script>
+
   </head>
   <body>
    
@@ -24,22 +26,31 @@
           
         <h2 class="fw-bold text-center pt-5 mb-5 py-5" style="padding-bottom:0rem!important; margin-bottom:1rem!important;">Modificar boleto</h2>
 
-        <form action="queryModificarBoletos.php" method="POST">
+        <form action="queryModificarBoletos.php" method="POST" class="row g-3 needs-validation" novalidate>
 
         <div class="mb-4">
 				<label for="labelCodigoAeropuerto" class="form-label">Número de Boleto</label>
 				<input type="text" class="form-control"  min="1" aria-describedby="nameCodigoAeropuerto" name="numero" required value="<?=$_GET['numeroBoleto']?>" readonly>
-		</div>
+        <div class="valid-feedback">
+            Datos ingresados.
+          </div>
+      </div>
         
         <div class="mb-4">
 				<label for="labelCodigoAeropuerto" class="form-label">Nombre del Pasajero</label>
 				<input type="text" class="form-control"  minlength="1" maxlength="50" aria-describedby="nameCodigoAeropuerto" name="nombre" required value="<?=$_GET['nombrePasajero']?>">
-		</div>
+        <div class="valid-feedback">
+            Datos ingresados.
+          </div>
+      </div>
 
         <div class="mb-4">
 				<label for="labelNombreAeropuerto" class="form-label">Fila</label>
 				<input type="number" class="form-control" min="1" max="20" aria-describedby="nameAeropuerto" name="fila" required value="<?=$_GET['fila']?>">
-			</div>	
+        <div class="valid-feedback">
+            Datos ingresados.
+          </div>
+      </div>	
       
       <div class="mb-4">
 				<label for="labelCiudadAeropuerto" class="form-label">Posición</label>
@@ -75,7 +86,10 @@
               break;
           }
         ?>
-        </select>	
+        </select>
+        <div class="valid-feedback">
+            Datos ingresados.
+          </div>	
 			</div>	
 
       <div class="mb-4">
@@ -98,7 +112,9 @@
           }
           echo "</select>";
         ?>
-        
+           <div class="valid-feedback">
+            Datos ingresados.
+          </div>
 			</div>
            
       <div class="d-grid">
@@ -114,7 +130,11 @@
         </div>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+  
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script>
+  validar();
+</script>
     </body>
 </html>

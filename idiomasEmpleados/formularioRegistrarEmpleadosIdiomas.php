@@ -4,15 +4,14 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- referencia al css del login -->
     <link rel="stylesheet" href="../css/login.css"/>
 
     <title>Idiomas que domina empleado</title>
+    <script src="../js/validate.js"></script>
+
   </head>
   <body>
 
@@ -36,7 +35,8 @@
 
         <h2 class="fw-bold text-center pt-5 mb-5 py-5">Idiomas que domina empleado</h2>
 
-        <form action="queryRegistrarIdiomasEmpleados.php" method="POST">
+        <form action="queryRegistrarIdiomasEmpleados.php" method="POST" class="row g-3 needs-validation" novalidate>
+      
 
           <div class="mb-4">
 				    <label for="labelCodigoIdioma" class="form-label">Idioma</label>
@@ -56,7 +56,9 @@
               }
               echo "</select>";
       ?>
-			  
+			  <div class="valid-feedback">
+            Datos ingresados.
+          </div>
           </div>
 
         <div class="mb-4">
@@ -64,21 +66,9 @@
 
 				  <input type="text" style="display:none" class="form-control" minlength="1" maxlength="20" value="<?=$_GET['codigoEmpleadoDatos']?>" aria-describedby="nameIdiomasEmpleados" name="txtNameIdiomasEmpleado" required placeholder="Ingresa el idioma">
           
-          <!--?php
-      
-      include "../conexion/conexion.php";
-      
-      $resultListaEmpleados=pg_query($conexion, "SELECT codigoEmpleado,nombreDatos FROM Empleados");
-
-      echo "<select name='txtNameEmpleado'>\n";
-
-      while ($row= pg_fetch_row($resultListaEmpleados)) {
-          $codigo = $row[0];
-          $nombre = $row[1];
-          echo "<option value='$codigo' id='opcion$codigo' selected='$codigo'>$nombre</option>";
-      }
-      echo "</select>";
-      ?-->
+          <div class="valid-feedback">
+            Datos ingresados.
+          </div>
       
         
         </div>			
@@ -99,9 +89,10 @@
 
     </div>
 
-   
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-
+  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script>
+  validar();
+</script>
     </body>
 </html>
