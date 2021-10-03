@@ -2,12 +2,13 @@
 
 include '../conexion/conexion.php';
 
-$origenA = $_GET['origen'];
-$destinoA = $_GET['destino'];
+$aerolinea = $_GET['aerolinea'];
+$vuelo = $_GET['vuelo'];
+
+
+
 $fechaA = $_GET['fecha'];
-
 $formatoResultado = $_GET['formato'];
-
 
 $year = substr($fechaA,0,4);
 $month = substr($fechaA,4,2);
@@ -15,15 +16,15 @@ $day = substr($fechaA,6,2);
 
 $fechaIng = "$year-$month-$day";
 
-$listadoVuelos ="SELECT DISTINCT aerol.matricula, V.fecha, R.aeropuertoOrigen, R.aeropuertoDestino
-                 FROM Rutas AS R, Viaje AS V, Aeronave AS aerol
-                 WHERE V.numeroVuelo = R.numeroVuelo AND R.aeropuertoOrigen = '$origenA' AND R.aeropuertoDestino = '$destinoA' AND V.fecha = '$fechaIng' 
-                    ";
 
+$listadoVuelos ="SELECT DISTINCT aerol.matricula, V.fecha, R.aeropuertoOrigen, R.aeropuertoDestino,V.numeroVuelo 
+FROM Rutas AS R, Viaje AS V, Aeronave AS aerol,Aeronave AS aer,Aeropuerto AS aerop,Viaje viaj
+WHERE V.numeroVuelo = R.numeroVuelo AND R.aeropuertoOrigen = aerop.codigoAeropuerto AND R.aeropuertoDestino = aerop.codigoAeropuerto AND V.fecha = '$fechaIng'
+AND aer.matricula='$aerolinea' and viaj.codigoViaje='$vuelo'";
 
-$infoVuelos  = "SELECT V.numeroVuelo, R.horaSalida, V.precio
-                FROM Viaje AS V, Rutas AS R
-                WHERE V.numeroVuelo = R.numeroVuelo AND V.fecha = '$fechaIng' AND R.aeropuertoOrigen = '$origenA' AND R.aeropuertoDestino = '$destinoA'";
+//echo "consulta $listadoVuelos";
+
+$infoVuelos  = "SELECT b.fila,b.posicion FROM Boletos as b,Viaje as v Where v.codigoViaje='$vuelo'";
 
 
 $ejecutarConsultaObtenerInfo = pg_query($conexion,$listadoVuelos);
@@ -41,7 +42,7 @@ function resultadosJSON($ejecutarConsultaObtenerInfo,$consultaInfoVuelos){
                 echo $json_string; 
                 //echo '<lista_vuelos>No hay informacion</lista_vuelos>';
             }else{
-                $arrayDatosConsulta = array(); 
+                $arrayDatosConsulta1 = array(); 
 
                 //echo '<lista_vuelos>';
                 //echo "\t<aerolinea>EY</aerolinea>\n";
@@ -53,82 +54,82 @@ function resultadosJSON($ejecutarConsultaObtenerInfo,$consultaInfoVuelos){
                         $destino = $row[3];
             
                         $fechaISO = str_replace('-','',$fecha);
+                        //echo "esto DDDDy 4444 $aerolinea";
 
                     
-                        $arreglo = array ("aerolinea"=>$aerolinea,"fecha"=>$fechaISO,"origen"=>$origen,"destino"=>$destino);
-                      
+                        $arreglo1 = array ("aerolinea"=>$aerolinea,"fecha"=>$fechaISO,"origen"=>$origen,"destino"=>$destino);
+                        //echo "ddd xxx$arreglo";
+                        //header('Content-Type: application/json');
+                        //$json_string = json_encode($arreglo);
+                        //echo $json_string; 
+
                         if (!(pg_num_rows($consultaInfoVuelos))) {
                             echo '<lista_vuelos>No hay informacion</lista_vuelos>';
                         }else{
+                            //echo "ENTRE";
                             while ($row= pg_fetch_row($consultaInfoVuelos)) {     
-                                $numero = $row[0];
-                                $hora= $row[1];
-                                $precio= $row[2];
-            
-                                $horaISO = str_replace(':', '', DateTime::createFromFormat('H:i:s',$hora)->format('H:i'));  
-                                //$arrayDatosConsulta["vuelo"] = array("numero"=>$numero,"hora"=>$horaISO,"precio","numero"=>precio);
-                                //$arrayDatosConsulta[] = array("vuelos"=>array ("numero"=>$numero,"hora"=>$horaISO,"precio"=>$precio));
-                                $arrayDatosConsulta["vuelos"] = "[";
-                                $arrayDatosConsulta[] = array("numero"=>$numero,"hora"=>$horaISO,"precio"=>$precio);
+                                $fila = $row[0];
+                                $posicion= $row[1];
+                           
+                                $arrayDatosConsulta1[] = array("asientos"=>array("fila"=>$fila,"posicion"=>$posicion));
+                              
                                 
-                    
                                
                             }
-                           
+                             //echo "aqui";
+                    header('Content-Type: application/json');
+                    $json_string = json_encode($arreglo1 + $arrayDatosConsulta1);
+                    echo $json_string; 
+                            
                         }
                     }
-                    header('Content-Type: application/json');
-                    $json_string = json_encode($arreglo + $arrayDatosConsulta);
-                    echo $json_string; 
-                   
-                //echo "</lista_vuelos>";
+               
             }
 }
 
 function resultadosXML($ejecutarConsultaObtenerInfo,$consultaInfoVuelos){
         // verificamos que existen registros, sino no dibujamos la tabla
         if (!(pg_num_rows($ejecutarConsultaObtenerInfo))) {
-            echo '<lista_vuelos>No hay informacion</lista_vuelos>';
+            echo '<lista_asientos>No hay informacion</lista_asientos>';
         }else{
-            echo '<lista_vuelos>';
+            echo '<lista_asientos>';
             //echo "\t<aerolinea>EY</aerolinea>\n";
                 while ($row= pg_fetch_row($ejecutarConsultaObtenerInfo)) {
                     $aerolinea = $row[0];
-
                     $fecha = $row[1];
                     $origen = $row[2];
                     $destino = $row[3];
+                    $numero = $row[4];
         
                     $fechaISO = str_replace('-','',$fecha);
                     echo "\t<aerolinea>$aerolinea</aerolinea>\n";
                     echo "\t<fecha>$fechaISO</fecha>\n";
                     echo "\t<origen>$origen</origen>\n";
                     echo "\t<destino>$destino</destino>\n";
-        
+                    echo "\t<numero>$numero</numero>\n";
+
                     if (!(pg_num_rows($consultaInfoVuelos))) {
-                        echo '<lista_vuelos>No hay informacion</lista_vuelos>';
+                        echo '<asiento>No hay informacion</asiento>';
                     }else{
                         while ($row= pg_fetch_row($consultaInfoVuelos)) {     
-                            $numero = $row[0];
-                            $hora= $row[1];
-                            $precio= $row[2];
+                            $fila= $row[0];
+                            $posicion= $row[1];
+                            
+                            //$horaISO = str_replace(':', '', DateTime::createFromFormat('H:i:s',$hora)->format('H:i'));  
         
-                            $horaISO = str_replace(':', '', DateTime::createFromFormat('H:i:s',$hora)->format('H:i'));  
-        
-                            echo "\t<vuelo>\n";
-                            echo "\t\t<numero>$numero</numero>\n";
-                            echo "\t\t<hora>$horaISO</hora>\n";
-                            echo "\t\t<precio>$precio</precio>\n";
-                            echo "\t\t</vuelo>\n";
+                            echo "\t<asiento>\n";
+                            echo "\t\t<fila>$fila</fila>\n";
+                            echo "\t\t<posicion>$posicion</posicion>\n";
+                            echo "\t\t</asiento>\n";
                         }
                     }
                 }
-            echo "</lista_vuelos>";
+            echo "</lista_asientos>";
         }
 }
 
 //Se permite que se ingrese 3 parametros o 4 con el formato
-if (($origenA && $destinoA && $fechaA)  || ($origenA && $destinoA && $fechaA && $formatoResultado) ) {
+if (($aerolinea && $vuelo && $fechaA)  || ($aerolinea && $vuelo && $fechaA && $formatoResultado) ) {
     
     //Verificamos si existe un cuarto parametro
     if (( empty ($formatoResultado ) ? NULL : $formatoResultado)) {
