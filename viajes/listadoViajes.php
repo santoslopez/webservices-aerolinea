@@ -87,6 +87,8 @@
             <a href='viajes/formularioRegistrarViaje.php'>Registrar Viaje</a>";
         }    
     }
+    pg_close($conexion);
+
 ?> 
 
 

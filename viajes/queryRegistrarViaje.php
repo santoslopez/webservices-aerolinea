@@ -81,6 +81,7 @@
 		//pg_close($conexion);
 
 	}
+    pg_close($conexion);
 
 	}
 ?>

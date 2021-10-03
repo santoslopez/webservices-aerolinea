@@ -53,8 +53,9 @@
     </table>
     <a href='aeropuerto/formularioRegistrarAeropuerto.php'>Registrar aeropuerto</a>";
     
-    
     }
+    pg_close($conexion);
+
     ?> 
 
 

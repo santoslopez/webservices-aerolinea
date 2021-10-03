@@ -92,5 +92,8 @@
 
 	}
 
+	pg_close($conexion);
+
+
 	}
 ?>

@@ -71,6 +71,7 @@
 		}
 
 	}
+    pg_close($conexion);
 
 	}
 ?>

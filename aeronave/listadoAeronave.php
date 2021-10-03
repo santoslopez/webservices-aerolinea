@@ -48,6 +48,9 @@
     </table>
     <a href='aeronave/formularioRegistrarAeronave.php'>Registrar Aeronave</a>";
     }
+
+    pg_close($conexion);
+
 ?> 
 
 

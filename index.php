@@ -133,8 +133,8 @@
               
                 <h2><span style="color:blue">Webservices</span></h2>
 
-                <a href="XML_listaVuelos/script_lista_vuelos.php">IR script_lista_vuelos</a><br>
-                <a href="XML_listaVuelos/ver_xml.php">XML lista VUELOS</a><br>
+                <a href="vuelosW/script_lista_vuelos.php">Ir script_lista_vuelos</a><br>
+                <a href="vuelosW/ver_xml.php">XML lista VUELOS</a><br>
             </div>
            
         </div>

@@ -70,4 +70,6 @@
 
     
     }
+    pg_close($conexion);
+
     ?> 

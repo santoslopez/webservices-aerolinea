@@ -17,7 +17,7 @@
         $hora = 0;
         $precio = 0;
 
-        $url = "http://localhost:8888/aerolinea/XML_listaVuelos/script_lista_vuelos.php";
+        $url = "http://localhost:8888/aerolinea/vuelosW/script_lista_vuelos.php";
         $xml = simplexml_load_file($url) or die ("La direccion URL".$url. " es incorrecto en simplexml_load");
 
         echo '<table class="table table-striped">

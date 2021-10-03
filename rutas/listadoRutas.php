@@ -69,4 +69,6 @@
 
         }    
     }
+    pg_close($conexion);
+
     ?> 

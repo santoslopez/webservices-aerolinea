@@ -84,4 +84,6 @@ if (!(pg_num_rows($ejecutarConsultaObtenerInfoViajes))) {
 
 
 }
+pg_close($conexion);
+
 ?> 

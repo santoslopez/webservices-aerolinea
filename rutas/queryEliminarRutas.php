@@ -55,7 +55,9 @@
     });
       
       </script>";
-    }    
+    }
+    pg_close($conexion);
+    
     
     //eliminarDatosFila("codigoLenguaEliminar",$queryEliminar,"prepareEliminarLenguas","La lengua se elimino","../perfil/index.php",$conexion);
 

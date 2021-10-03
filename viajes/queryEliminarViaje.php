@@ -56,5 +56,6 @@ if ($res) {
   
   </script>";
 }    
+pg_close($conexion);
 
 ?>

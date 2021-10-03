@@ -45,4 +45,6 @@
     
     
     }
+    pg_close($conexion);
+
     ?> 

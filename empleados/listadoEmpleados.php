@@ -60,6 +60,7 @@
     echo "</tbody>
     </table>
     <a href='empleados/formularioRegistrarEmpleados.php'>Registrar empleados</a>";        
-    
     }
+    pg_close($conexion);
+
     ?> 

@@ -57,7 +57,9 @@
     });
       
       </script>";
-    }   
+    }
+    pg_close($conexion);
+   
     }
 
     ?>
