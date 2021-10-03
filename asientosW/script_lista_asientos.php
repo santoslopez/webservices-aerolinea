@@ -8,7 +8,7 @@ $vuelo = $_GET['vuelo'];
 
 
 $fechaA = $_GET['fecha'];
-$formatoResultado = strtolower($_GET['formato']);
+$formatoResultado = $_GET['formato'];
 
 $year = substr($fechaA,0,4);
 $month = substr($fechaA,4,2);
