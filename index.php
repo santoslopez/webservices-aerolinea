@@ -132,9 +132,10 @@
             <div class="alert alert-primary" role="alert">
               
                 <h2><span style="color:blue">Webservices</span></h2>
-
                 <a href="vuelosW/script_lista_vuelos.php">Ir script_lista_vuelos</a><br>
-                <a href="vuelosW/ver_xml.php">XML lista VUELOS</a><br>
+                <a href="boletosW/script_reserva.php">Ir script_reserva</a><br>
+                <a href="vuelosW/script_lista_vuelos.php">Ir script_lista_vuelos</a><br>
+
             </div>
            
         </div>

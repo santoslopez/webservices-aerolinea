@@ -8,7 +8,7 @@ $vuelo = $_GET['vuelo'];
 
 
 $fechaA = $_GET['fecha'];
-$formatoResultado = $_GET['formato'];
+$formatoResultado = strtolower($_GET['formato']);
 
 $year = substr($fechaA,0,4);
 $month = substr($fechaA,4,2);
@@ -34,18 +34,15 @@ function resultadosJSON($ejecutarConsultaObtenerInfo,$consultaInfoVuelos){
             // verificamos que existen registros, sino no dibujamos la tabla
             if (!(pg_num_rows($ejecutarConsultaObtenerInfo))) {
                 $arrayDatosConsulta = array(); 
-                //header('Access-Control-Allow-Origin: *');
                 header('Content-Type: application/json');
                 $arrayDatosConsulta[] = array("Mensaje"=>"No hay informacion");
+                
                 //Creamos el JSON
                 $json_string = json_encode($arrayDatosConsulta);
                 echo $json_string; 
-                //echo '<lista_vuelos>No hay informacion</lista_vuelos>';
             }else{
                 $arrayDatosConsulta1 = array(); 
 
-                //echo '<lista_vuelos>';
-                //echo "\t<aerolinea>EY</aerolinea>\n";
                     while ($row= pg_fetch_row($ejecutarConsultaObtenerInfo)) {
                         $aerolinea = $row[0];
 
@@ -58,11 +55,7 @@ function resultadosJSON($ejecutarConsultaObtenerInfo,$consultaInfoVuelos){
 
                     
                         $arreglo1 = array ("aerolinea"=>$aerolinea,"fecha"=>$fechaISO,"origen"=>$origen,"destino"=>$destino);
-                        //echo "ddd xxx$arreglo";
-                        //header('Content-Type: application/json');
-                        //$json_string = json_encode($arreglo);
-                        //echo $json_string; 
-
+                    
                         if (!(pg_num_rows($consultaInfoVuelos))) {
                             echo '<lista_vuelos>No hay informacion</lista_vuelos>';
                         }else{
@@ -76,7 +69,6 @@ function resultadosJSON($ejecutarConsultaObtenerInfo,$consultaInfoVuelos){
                                 
                                
                             }
-                             //echo "aqui";
                     header('Content-Type: application/json');
                     $json_string = json_encode($arreglo1 + $arrayDatosConsulta1);
                     echo $json_string; 
@@ -128,6 +120,7 @@ function resultadosXML($ejecutarConsultaObtenerInfo,$consultaInfoVuelos){
         }
 }
 
+
 //Se permite que se ingrese 3 parametros o 4 con el formato
 if (($aerolinea && $vuelo && $fechaA)  || ($aerolinea && $vuelo && $fechaA && $formatoResultado) ) {
     
@@ -154,10 +147,11 @@ if (($aerolinea && $vuelo && $fechaA)  || ($aerolinea && $vuelo && $fechaA && $f
     }
 
 }else {
-    echo "Parametros no esperados";
+   echo "<h2>Parametros ingresados incorrectos</h2>";
+   echo "<p>script_lista_asientos?aerolina=GU&vuelo=123&fecha=20210824&formato=JSON</p>";
+   echo "<p>script_lista_asientos?aerolina=GU&vuelo=123&fecha=20210824&formato=XML</p>";
+   echo "<p>script_lista_asientos?aerolina=GU&vuelo=123&fecha=20210824 </p>";
 }
-
-
 
 ?> 
 

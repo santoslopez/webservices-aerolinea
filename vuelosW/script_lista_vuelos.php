@@ -6,8 +6,7 @@ $origenA = $_GET['origen'];
 $destinoA = $_GET['destino'];
 $fechaA = $_GET['fecha'];
 
-$formatoResultado = $_GET['formato'];
-
+$formatoResultado = strtolower($_GET['formato']);
 
 $year = substr($fechaA,0,4);
 $month = substr($fechaA,4,2);
@@ -19,7 +18,6 @@ $listadoVuelos ="SELECT DISTINCT aerol.matricula, V.fecha, R.aeropuertoOrigen, R
                  FROM Rutas AS R, Viaje AS V, Aeronave AS aerol
                  WHERE V.numeroVuelo = R.numeroVuelo AND R.aeropuertoOrigen = '$origenA' AND R.aeropuertoDestino = '$destinoA' AND V.fecha = '$fechaIng' 
                     ";
-
 
 $infoVuelos  = "SELECT V.numeroVuelo, R.horaSalida, V.precio
                 FROM Viaje AS V, Rutas AS R
@@ -66,22 +64,17 @@ function resultadosJSON($ejecutarConsultaObtenerInfo,$consultaInfoVuelos){
                                 $precio= $row[2];
             
                                 $horaISO = str_replace(':', '', DateTime::createFromFormat('H:i:s',$hora)->format('H:i'));  
-                                //$arrayDatosConsulta["vuelo"] = array("numero"=>$numero,"hora"=>$horaISO,"precio","numero"=>precio);
-                                //$arrayDatosConsulta[] = array("vuelos"=>array ("numero"=>$numero,"hora"=>$horaISO,"precio"=>$precio));
+
                                 $arrayDatosConsulta["vuelos"] = "[";
                                 $arrayDatosConsulta[] = array("numero"=>$numero,"hora"=>$horaISO,"precio"=>$precio);
                                 
-                    
-                               
                             }
-                           
                         }
                     }
                     header('Content-Type: application/json');
                     $json_string = json_encode($arreglo + $arrayDatosConsulta);
                     echo $json_string; 
                    
-                //echo "</lista_vuelos>";
             }
 }
 
@@ -153,10 +146,12 @@ if (($origenA && $destinoA && $fechaA)  || ($origenA && $destinoA && $fechaA && 
     }
 
 }else {
-    echo "Parametros no esperados";
+    echo "<h2>Parametros ingresados incorrectos</h2>";
+    echo "<p>Formato esperado: script_lista_vuelos?origen=GUA&destino=FLW&fecha=20210824&formato=JSON</p><br>";
+    echo "<p>Formato esperado: script_lista_vuelos?origen=GUA&destino=FLW&fecha=20210824&formato=XML</p><br>";
+    echo "<p>Formato esperado: script_lista_vuelos?origen=GUA&destino=FLW&fecha=20210824</p></br>";
+
 }
-
-
 
 ?> 
 

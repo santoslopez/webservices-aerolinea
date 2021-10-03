@@ -12,9 +12,10 @@ Diagrama utilizado para la creación del script de la base de datos.
 Dashboard principal del sistema 
 
 # El sistema permite:
-Registrar, modificar, eliminar listar en : empleados, idiomas que domina empleados, aeropuerto, rutas, viajes, idiomas, aerolinea, etc.
+Registrar, modificar, eliminar listar en : empleados, idiomas que domina empleados, aeropuerto, rutas, viajes, idiomas, idiomas que domina empleados, aerolinea, etc.
 
 # Web services
-Actualmente implementado script_lista_vuelos sin embargo le falta indicarle que recibe parametros.
+Actualmente implementado script_lista_vuelos, script_reserva y lista_asientos
+
 
 

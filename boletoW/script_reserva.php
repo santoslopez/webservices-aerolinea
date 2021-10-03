@@ -156,7 +156,11 @@ if (($aerolinea  && $fechaA && $vuelo && $asiento && $nombre)  || ($aerolinea  &
     }
 
 }else {
-    echo "Parametros no esperados";
+
+    echo "<h2>Parametros ingresados incorrectos</h2>";
+    echo "<p>script_reserva?aerolina=GU&vuelo=123&fecha=20210824&asiento=1A&nombre=JuanPerez&formato=JSON</p>";
+    echo "<p>script_reserva?aerolina=GU&vuelo=123&fecha=20210824&asiento=1A&nombre=JuanPerez&formato=XML</p>";
+    echo "<p>script_reserva?aerolina=GU&vuelo=123&fecha=20210824&asiento=1A&nombre=JuanPerez</p>";
 }
 
 
