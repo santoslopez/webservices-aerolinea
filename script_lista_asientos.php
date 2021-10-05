@@ -3,7 +3,7 @@
 include '../aerolineacc6/conexion/conexion.php';
 include '../aerolineacc6/aerolinea/aerolinea.php';
 
-$aerolinea = $_GET['aerolinea'];
+$aerolineaA = $_GET['aerolinea'];
 $vuelo = $_GET['vuelo'];
 $fechaA = $_GET['fecha'];
 $formatoResultado = $_GET['formato'];
@@ -111,7 +111,7 @@ function resultadosXML($ejecutarConsultaObtenerInfo,$consultaInfoVuelos, $aeroli
     }
 }
 
-if($aerolinea == 'EY'){
+if($aerolinea == $aerolineaA){
     //Se permite que se ingrese 3 parametros o 4 con el formato
     if (($aerolinea && $vuelo && $fechaA)  || ($aerolinea && $vuelo && $fechaA && $formatoResultado) ) {
         
