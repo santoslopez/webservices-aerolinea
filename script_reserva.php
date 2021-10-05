@@ -1,7 +1,7 @@
 <?php 
 
-include '../conexion/conexion.php';
-include '../aerolinea/aerolinea.php';
+include '../aerolineacc6/conexion/conexion.php';
+include '../aerolineacc6/aerolinea/aerolinea.php';
 
 $aerolinea = $_GET['aerolinea'];
 $asiento = $_GET['asiento'];
