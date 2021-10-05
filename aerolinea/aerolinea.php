@@ -1,0 +1,3 @@
+<?php
+    $aerolinea = 'EY';
+?>
