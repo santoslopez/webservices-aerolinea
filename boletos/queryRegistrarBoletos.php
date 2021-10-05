@@ -39,7 +39,7 @@
 			icon: 'error',
 			title: 'Datos no registrados',
 			text: 'Los datos no se guardaron',
-			footer: '<a>Datos no se guardadoron. Ya esta en uso</a>'
+			footer: '<a>Datos no se guardaron. Ya esta en uso</a>'
 	  }).then(function() {
 		window.location = '../index.php';
 	});
