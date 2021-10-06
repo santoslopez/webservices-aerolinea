@@ -68,14 +68,7 @@
           </div>   
 			</div>	    
             
-            <div class="mb">
-                <label for="">Tiempo en empresa</label>
-                <input type="number" class="form-control" name="txtNuevoTiempoEnEmpresa"  value="<?=$_GET['nuevoTiempoEnEmpresa']?>" aria-describedby="ariaTiempoEnEmergencia" placeholder="Tiempo en empresa" required><br>
-                <div class="valid-feedback">
-            Datos ingresados.
-          </div>
-            
-              </div>	    
+           
                 
         	<div class="mb">
                 <label for="">Tiempo en empresa</label>

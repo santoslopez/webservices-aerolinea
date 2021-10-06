@@ -12,8 +12,6 @@
 </head>
 <body>
 
-
-
 <?php
   /**
    * Archivo necesario para obtener la variable $conexion necesario para conectarse a la base de datos.

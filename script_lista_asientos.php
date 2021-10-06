@@ -56,12 +56,46 @@ function resultadosJSON($ejecutarConsultaObtenerInfo,$consultaInfoVuelos, $aerol
                     array_push($asientos, $asiento);
                 }
             } 
+        } 
+        
+        $arrayposiciones = ['A', 'B','C','D'];
+        $contfilas = 1;
+        $asientosaux= array();
+        $disponibles = array();
+
+        while( $contfilas <= 20){   
+            $contcol = 0;
+            while($contcol < 4){
+                $asientoA = array(
+                    'fila' => $contfilas,
+                    'posicion' => "$arrayposiciones[$contcol]"
+                );
+                array_push($asientosaux, $asientoA);
+                $contcol++;
+            }
+            $contfilas ++;
         }
 
+        error_reporting(0);
+
+        $contpersonas = 0;
+        $contasientos = 0;
+
+        while($contasientos < count($asientosaux)){
+            //echo $contasientos."\n";
+            
+            if(($asientosaux[$contasientos] == $asientos[$contpersonas]) AND ($contpersonas < count($asientos))){
+                //echo "ocupado\n";
+                $contpersonas++;
+            }else{
+                array_push($disponibles, $asientosaux[$contasientos]);
+            }
+            $contasientos++;
+        }
+        
         $fechaISO = str_replace('-','', $fecha);
         $avion = "$marca $modelo";
-        
-        $info['lista_asientos'] = array('aerolinea' => $aerolinea, "numero" => $numero, 'fecha' => $fechaISO, 'origen' => $origen, 'destino' => $destino, "avion" => $avion , 'asientos'=> $asientos);
+        $info['lista_asientos'] = array('aerolinea' => $aerolinea, "numero" => $numero, 'fecha' => $fechaISO, 'origen' => $origen, 'destino' => $destino, "avion" => $avion , 'asientos'=> $disponibles);
 
         header('Content-Type: application/json');
         echo json_encode($info);
@@ -69,45 +103,83 @@ function resultadosJSON($ejecutarConsultaObtenerInfo,$consultaInfoVuelos, $aerol
 }
 
 function resultadosXML($ejecutarConsultaObtenerInfo,$consultaInfoVuelos, $aerolinea){
-
     // verificamos que existen registros, sino no dibujamos la tabla
+    $info = array();
+    $asientos = array();
+    $info['lista_asientos'] = array();
+
     if (!(pg_num_rows($ejecutarConsultaObtenerInfo))) {
-        echo '<lista_asientos>No hay informacion</lista_asientos>';
+        echo json_encode(array('mensaje' => 'No existen vuelos'));
     }else{
         echo '<lista_asientos>';
-        //echo "\t<aerolinea>EY</aerolinea>\n";
-        while ($row= pg_fetch_row($ejecutarConsultaObtenerInfo)) {
-            $numeroVuelo = $row[0];
+        while ($row = pg_fetch_row($ejecutarConsultaObtenerInfo)) {
+            $numero = $row[0];
             $fecha = $row[1];
             $origen = $row[2];
             $destino = $row[3];
-            $marca = $row[4];
+            $marca= $row[4];
             $modelo = $row[5];
-
             $fechaISO = str_replace('-','',$fecha);
 
-            echo "\t<aerolinea>$aerolinea</aerolinea>\n";
-            echo "\t<numero>$numeroVuelo</numero>\n";
-            echo "\t<fecha>$fechaISO</fecha>\n";
-            echo "\t<origen>$origen</origen>\n";
-            echo "\t<destino>$destino</destino>\n";
-            echo "\t<avion>$marca $modelo</avion>\n";
-
+            echo "<aerolinea>$aerolinea</aerolinea>";
+            echo "<numero>$numero</numero>";
+            echo "<fecha>$fechaISO</fecha>";
+            echo "<origen>$origen</origen>";
+            echo "<destino>$destino</destino>";
+            echo "<avion>$marca $modelo</avion>";
+    
             if (!(pg_num_rows($consultaInfoVuelos))) {
-                echo '<asiento></asiento>';
+                //echo json_encode('');
             }else{
                 while ($row = pg_fetch_row($consultaInfoVuelos)) {
-                    $fila = $row[0];
-                    $posicion = $row[1];
-                    
-                    echo "\t<asiento>\n";
-                    echo "\t\t<fila>$fila</fila>\n";
-                    echo "\t\t<posicion>$posicion</posicion>\n";
-                    echo "\t\t</asiento>\n";
+                    $asiento = array(
+                        'fila' => $row[0],
+                        'posicion' => $row[1]
+                    );
+                    array_push($asientos, $asiento);
                 }
+            } 
+        } 
+        
+        $arrayposiciones = ['A', 'B','C','D'];
+        $contfilas = 1;
+        $asientosaux= array();
+        $disponibles = array();
+
+        while( $contfilas <= 20){   
+            $contcol = 0;
+            while($contcol < 4){
+                $asientoA = array(
+                    'fila' => $contfilas,
+                    'posicion' => "$arrayposiciones[$contcol]"
+                );
+                array_push($asientosaux, $asientoA);
+                $contcol++;
             }
+            $contfilas ++;
         }
-        echo "</lista_asientos>";
+
+        error_reporting(0);
+
+        $contpersonas = 0;
+        $contasientos = 0;
+
+        while($contasientos < count($asientosaux)){
+            //echo $contasientos."\n";
+            
+            if(($asientosaux[$contasientos] == $asientos[$contpersonas]) AND ($contpersonas < count($asientos))){
+                //echo "ocupado\n";
+                $contpersonas++;
+            }else{
+                array_push($disponibles, $asientosaux[$contasientos]);
+                echo "<asiento>";
+                echo "<fila>".$asientosaux[$contasientos]['fila']."</fila>";
+                echo "<posicion>".$asientosaux[$contasientos]['posicion']."</posicion>";
+                echo "</asiento>";
+            }
+            $contasientos++;
+        }
+        echo '</lista_asientos>';
     }
 }
 

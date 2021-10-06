@@ -20,7 +20,7 @@
             echo "<div class='alert alert-danger' role='alert'>
                     No hay información de rutas.
                   </div>
-                  <a href='aeropuerto/formularioRegistrarRutas.php'><img src='img/pin.png' alt='HTML tutorial' style='width:15%;height:15%;'>Registrar rutas</a>";
+                  <a href='rutas/formularioRegistrarRutas.php'><img src='img/pin.png' alt='HTML tutorial' style='width:15%;height:15%;'>Registrar rutas</a>";
         }else{             
             
 
@@ -65,7 +65,7 @@
             }
             echo "</tbody>
             </table>
-            <a href='aeropuerto/formularioRegistrarRutas.php'><img src='img/pin.png' alt='HTML tutorial' style='width:15%;height:15%;'>Registrar rutas</a>";
+            <a href='rutas/formularioRegistrarRutas.php'><img src='img/pin.png' alt='HTML tutorial' style='width:15%;height:15%;'>Registrar rutas</a>";
 
         }    
     }

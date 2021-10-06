@@ -65,7 +65,7 @@
 				icon: 'success',
 				title: 'Datos registrados en aeropuerto',
 				text: 'Los datos se guardaron',
-				footer: '<a>Datos guardados correctamente.</a>'s
+				footer: '<a>Datos guardados correctamente.</a>'
 		  }).then(function() {
 			window.location = '../index.php';
 		});

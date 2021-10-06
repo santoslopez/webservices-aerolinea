@@ -128,7 +128,7 @@
             
         </div>
 
-        <div class="tab-pane fade" id="webservices" role="tabpanel" aria-labelledby="webservices-tab" style="width:100%">
+        <!--div class="tab-pane fade" id="webservices" role="tabpanel" aria-labelledby="webservices-tab" style="width:100%">
             <div class="alert alert-primary" role="alert">
               
                 <h2><span style="color:blue">Webservices</span></h2>
@@ -137,7 +137,7 @@
                 <a href="../aerolineacc6/script_lista_vuelos.php">Ir script_lista_vuelos</a><br>
             </div>
            
-        </div>
+        </div-->
 
 
         <div class="tab-pane fade show active" id="acerca" role="tabpanel" aria-labelledby="acerca-tab" style="width:100%">
@@ -157,6 +157,13 @@
                 by <a href="https://flaticon.com" >FlatIcon</a><br>
                 by <a href="https://boxicons.com/?query=bag" >Boxicons</a><br>
 
+                <!--a href="../aerolineacc6/script_lista_vuelos.php">Ir script_lista_vuelos</a><br>
+                <a href="../aerolineacc6/script_reserva.php">Ir script_reserva</a><br>
+                <a href="../aerolineacc6/script_lista_asientos.php">Ir script_lista_asientos</a><br-->
+
+                <center>
+                    <img src="img/ey.jpg" alt="Etihad Airways" width="20%" height="20%">
+                </center>
             </div>
         </div>
 
@@ -189,7 +196,7 @@
 
                 
                 <div  class="nav nav-tabs nav__list" id="nav-tab" role="tablist">
-                    <img src="img/fly.png" alt="Aeropuerto" style="width:35%;height:25%;display:block;margin:auto;">
+                    <img src="img/fly.png" alt="Aeropuerto" style="width:20%;height:10%;display:block;margin:auto;">
                     <!-- Acerca -->
                     <a class="nav-link" id="acerca-tab" data-toggle="pill"  href="#acerca"  role="tab" aria-controls="acerca" aria-selected="true" aria-label="Home">
                         <i class='bx bx-info-circle nav__icon'></i>
@@ -281,12 +288,12 @@
                     </a>
 
                     <!-- webservices -->
-                    <a class="nav-link" id="webservices-tab" data-toggle="pill" href="#webservices"  role="tab" aria-controls="webservices" aria-selected="false">
+                    <!--a class="nav-link" id="webservices-tab" data-toggle="pill" href="#webservices"  role="tab" aria-controls="webservices" aria-selected="false">
                         <i class='bx bx-money nav__icon'></i>
                         <span class="nav__name">
                            Webservices
                         </span>
-                    </a>
+                    </a-->
                     
  
                 </div>
