@@ -21,7 +21,8 @@ $listadoVuelos ="SELECT DISTINCT V.fecha, R.aeropuertoOrigen, R.aeropuertoDestin
 
 $infoVuelos  = "SELECT V.numeroVuelo, R.horaSalida, V.precio
                 FROM Viaje AS V, Rutas AS R
-                WHERE V.numeroVuelo = R.numeroVuelo AND V.fecha = '$fechaIng' AND R.aeropuertoOrigen = '$origenA' AND R.aeropuertoDestino = '$destinoA'";
+                WHERE V.numeroVuelo = R.numeroVuelo AND V.fecha = '$fechaIng' AND R.aeropuertoOrigen = '$origenA' AND R.aeropuertoDestino = '$destinoA'
+                ORDER BY R.horaSalida";
 
 
 $ejecutarConsultaObtenerInfo = pg_query($conexion,$listadoVuelos);
@@ -72,7 +73,7 @@ function resultadosXML($ejecutarConsultaObtenerInfo,$consultaInfoVuelos, $aeroli
             echo '<lista_vuelos>No hay informacion</lista_vuelos>';
         }else{
             echo '<lista_vuelos>';
-            //echo "\t<aerolinea>EY</aerolinea>\n";
+            //echo "<aerolinea>EY</aerolinea>";
                 while ($row= pg_fetch_row($ejecutarConsultaObtenerInfo)) {
 
                     $fecha = $row[0];
@@ -81,10 +82,10 @@ function resultadosXML($ejecutarConsultaObtenerInfo,$consultaInfoVuelos, $aeroli
         
                     $fechaISO = str_replace('-','', $fecha);
 
-                    echo "\t<aerolinea>$aerolinea</aerolinea>\n";
-                    echo "\t<fecha>$fechaISO</fecha>\n";
-                    echo "\t<origen>$origen</origen>\n";
-                    echo "\t<destino>$destino</destino>\n";
+                    echo "<aerolinea>$aerolinea</aerolinea>";
+                    echo "<fecha>$fechaISO</fecha>";
+                    echo "<origen>$origen</origen>";
+                    echo "<destino>$destino</destino>";
         
                     if (!(pg_num_rows($consultaInfoVuelos))) {
                         echo '<vuelos></vuelos>';
@@ -96,11 +97,11 @@ function resultadosXML($ejecutarConsultaObtenerInfo,$consultaInfoVuelos, $aeroli
         
                             $horaISO = str_replace(':', '', DateTime::createFromFormat('H:i:s',$hora)->format('H:i'));  
         
-                            echo "\t<vuelo>\n";
-                            echo "\t\t<numero>$numero</numero>\n";
-                            echo "\t\t<hora>$horaISO</hora>\n";
-                            echo "\t\t<precio>$precio</precio>\n";
-                            echo "\t\t</vuelo>\n";
+                            echo "<vuelo>";
+                            echo "<numero>$numero</numero>";
+                            echo "<hora>$horaISO</hora>";
+                            echo "<precio>$precio</precio>";
+                            echo "</vuelo>";
                         }
                     }
                 }

@@ -158,6 +158,9 @@
                 by <a href="https://boxicons.com/?query=bag" >Boxicons</a><br>
 
             </div>
+            <center>
+                <img src="../aerolineacc6/img/ey.jpg" alt="Etihad Airways" width="40%" height="50%">
+            </center>
         </div>
 
     </div>

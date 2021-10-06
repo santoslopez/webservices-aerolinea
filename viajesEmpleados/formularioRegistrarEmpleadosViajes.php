@@ -19,12 +19,12 @@
       <div class="row align-items-stretch">
      
         <div class="col bgRegistrarCuenta d-none d-lg-block col-md-5 col-xl-6 rounded" > 
-          <img class="aeronave" src="../img/viajesempleados.png" alt="viajes empleados" width="100%" height="80%">
+          <img class="aeronave" src="../img/tripulation.png" alt="viajes empleados" width="90%" height="80%">
         </div>
 
         <div class="col bg-white pd-5 rounded-end">
           <div class="text-end">
-            <img src="../img/viajesempleados.png" alt="Idiomas" width="48">
+            <img src="../img/tripulation.png" alt="Idiomas" width="48">
           </div>
 
           <h2 class="fw-bold text-center pt-5 mb-5 py-5" style="margin-bottom: 0rem! important; ">Agregar tripulación</h2>
