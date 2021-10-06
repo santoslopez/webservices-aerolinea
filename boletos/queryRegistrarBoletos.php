@@ -46,14 +46,15 @@
 	  
 	  </script>";
 	}else {
-
-		$consulta  = sprintf("INSERT INTO Boletos(nombrePasajero, fila, posicion, codigoViaje) VALUES('%s','%s','%s','%s');",
-		pg_escape_string($nombre),
-		pg_escape_string($fila),
-		pg_escape_string($posicion),
-		pg_escape_string($codigo)
-		);
-		$ejecutarConsulta = pg_query($conexion, $consulta);
+	
+		$consulta = "INSERT INTO Boletos(nombrePasajero, fila, posicion, codigoViaje) VALUES ($1,$2,$3,$4)";
+		pg_prepare($conexion,"prepareInsertarBoletos",$consulta) or die("Cannot prepare statement .");
+	
+		$ejecutarConsulta= pg_execute($conexion,"prepareInsertarBoletos",
+		array(
+			htmlspecialchars($nombre),htmlspecialchars($fila),
+			htmlspecialchars($posicion),htmlspecialchars($codigo)
+		) );
 	
 		/*** Sino hay ningun error*/
 		if ($ejecutarConsulta) {

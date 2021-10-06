@@ -37,7 +37,11 @@
 
     pg_prepare($conexion,"prepareModificarViaje",$consultaModificarViaje) or die("Cannot prepare statement.");
   
-    $res = pg_execute($conexion,"prepareModificarViaje",array($precio, $fecha, $numeroVuelo, $matricula, $codigoViaje));
+    $res = pg_execute($conexion,"prepareModificarViaje",array(htmlspecialchars($precio),
+    htmlspecialchars($fecha), 
+    htmlspecialchars($numeroVuelo), 
+    htmlspecialchars($matricula), 
+    htmlspecialchars($codigoViaje)));
     
     if ($res) {
 			echo "<script>

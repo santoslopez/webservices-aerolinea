@@ -40,7 +40,10 @@
 
     pg_prepare($conexion,"prepareModificarIdiomasDomina",$consultaModificarAeropuerto) or die("Cannot prepare statement.");
   
-    $res = pg_execute($conexion,"prepareModificarIdiomasDomina",array($obtenerNombreAeropuerto,$obtenerCiudadAeropuerto,$obtenerPaisAeropuerto,$obtenerCodigoAeropuerto));
+    $res = pg_execute($conexion,"prepareModificarIdiomasDomina",array(htmlspecialchars($obtenerNombreAeropuerto),
+    htmlspecialchars($obtenerCiudadAeropuerto),
+    htmlspecialchars($obtenerPaisAeropuerto),
+    htmlspecialchars($obtenerCodigoAeropuerto)));
     
     if ($res) {
 			echo "<script>

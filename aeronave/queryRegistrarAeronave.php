@@ -40,19 +40,29 @@
 	$ejecutarConsultaVerificarAeropuerto = pg_execute($conexion,"prepareVerificarAeropuerto",array($matricula));
 
 	if (pg_num_rows($ejecutarConsultaVerificarAeropuerto)) {
-        alert("El idioma esta en uso");
+		echo "<script>
+		Swal.fire({
+			icon: 'error',
+			title: 'Matricula ya existe',
+			text: 'Los datos no se guardaron',
+			footer: '<a>Error los datos no se guardaron.</a>'
+	  }).then(function() {
+		window.location = '../index.php';
+	});
+	  
+	  </script>";
 
 	}else {
+		
+		$consulta= "INSERT INTO Aeronave (matricula, marca, modelo, capacidadPasajeros, capacidadPeso) VALUES ($1,$2,$3,$4,$5)";
+		pg_prepare($conexion,"prepareInsertarAeronave",$consulta) or die("Cannot prepare statement .");
+	
+		$ejecutarConsulta= pg_execute($conexion,"prepareInsertarAeronave",
+		array(
+			htmlspecialchars($matricula),htmlspecialchars($marca),
+			htmlspecialchars($modelo),htmlspecialchars($capacidadPasajeros),htmlspecialchars($capacidadPeso)
+		) );
 
-		$consulta  = sprintf("INSERT INTO Aeronave (matricula, marca, modelo, capacidadPasajeros, capacidadPeso) VALUES('%s','%s','%s','%s','%s');",
-		pg_escape_string($matricula),
-		pg_escape_string($marca),
-		pg_escape_string($modelo),
-		pg_escape_string($capacidadPasajeros),
-		pg_escape_string($capacidadPeso)
-
-		);
-		$ejecutarConsulta = pg_query($conexion, $consulta);
 	
 		/*** Sino hay ningun error*/
 		if ($ejecutarConsulta) {

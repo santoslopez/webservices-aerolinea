@@ -42,13 +42,14 @@
 
     pg_prepare($conexion,"prepareModificarEmpleados",$consultaModificarLenguas) or die("Cannot prepare statement.");
   
-    $res = pg_execute($conexion,"prepareModificarEmpleados",array($nuevosDatosEmpleado,
-    $nuevoPuestoEmpleado,
-    $nuevoHorasDeVuelo,
-    $nuevoContactoEmergencia,
-    $nuevoTiempoEnEmpresa,
-    $nacionalidad,
-    $codigoEmpleadoModificar
+    $res = pg_execute($conexion,"prepareModificarEmpleados",array(
+      htmlspecialchars($nuevosDatosEmpleado),
+      htmlspecialchars($nuevoPuestoEmpleado),
+      htmlspecialchars($nuevoHorasDeVuelo),
+      htmlspecialchars($nuevoContactoEmergencia),
+      htmlspecialchars($nuevoTiempoEnEmpresa),
+      htmlspecialchars($nacionalidad),
+      htmlspecialchars($codigoEmpleadoModificar)
     )
   
   );

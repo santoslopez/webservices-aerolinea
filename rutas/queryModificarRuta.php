@@ -42,7 +42,12 @@
 
     pg_prepare($conexion,"prepareModificarRutas",$consultaModificarRutas) or die("Cannot prepare statement.");
   
-    $res = pg_execute($conexion,"prepareModificarRutas",array($obtenerNumeroVuelo,$obtenerTiempoVuelo,$obtenerHoraSalida,$obtenerDistancia,$obtenerAeropuertoOrigen,$obtenerAeropuertoDestino));
+    $res = pg_execute($conexion,"prepareModificarRutas",array(htmlspecialchars($obtenerNumeroVuelo),
+    htmlspecialchars($obtenerTiempoVuelo),
+    htmlspecialchars($obtenerHoraSalida),
+    htmlspecialchars($obtenerDistancia),
+    htmlspecialchars($obtenerAeropuertoOrigen),
+    htmlspecialchars($obtenerAeropuertoDestino)));
     
     if ($res) {
 			echo "<script>

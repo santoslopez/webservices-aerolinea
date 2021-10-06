@@ -29,11 +29,15 @@
     header('Location: ../index.php');
     //exit('Por favor ingresa el nombre de usuario y password.');
   }else {
+
+    
     $consultaModificarAeronave = "UPDATE Aeronave SET marca = $1, modelo = $2, capacidadPasajeros = $3, capacidadPeso = $4  WHERE matricula = $5";
 
     pg_prepare($conexion,"prepareModificarAeronave",$consultaModificarAeronave) or die("Cannot prepare statement.");
   
-    $res = pg_execute($conexion,"prepareModificarAeronave",array($marca, $modelo, $capacidadPasajeros, $capacidadPeso, $matricula));
+    $res = pg_execute($conexion,"prepareModificarAeronave",array(htmlspecialchars($marca), 
+    htmlspecialchars($modelo), htmlspecialchars($capacidadPasajeros), htmlspecialchars($capacidadPeso), 
+    htmlspecialchars($matricula)));
     
     if ($res) {
 			echo "<script>

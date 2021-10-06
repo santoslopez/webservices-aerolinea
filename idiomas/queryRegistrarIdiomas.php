@@ -37,9 +37,7 @@
 	$ejecutarConsultaVerificarLenguas = pg_execute($conexion,"prepareVerificarIdiomasDomina",array($obtenerNombreIdioma));
 
 	if (pg_num_rows($ejecutarConsultaVerificarLenguas)) {
-		//echo "<script>
-		//alert ('No se actualizaron los datos porque estan en uso');
-		//</script>";   
+	 
 		echo "<script>  Swal.fire({
 			icon: 'error',
 			title: 'Oops...',
@@ -50,10 +48,10 @@
 
 
 	}else {
-
-		$consulta  = sprintf("INSERT INTO Idiomas(nombreIdioma) VALUES('%s');",
-		pg_escape_string($obtenerNombreIdioma));
-		$ejecutarConsulta = pg_query($conexion, $consulta);
+		$consultaInsertarLeccion = "INSERT INTO Idiomas(nombreIdioma) VALUES ($1)";
+		pg_prepare($conexion,"prepareInsertarIdiomas",$consultaInsertarLeccion) or die("Cannot prepare statement .");
+		
+		$ejecutarConsulta= pg_execute($conexion,"prepareInsertarIdiomas",array(htmlspecialchars($obtenerNombreIdioma)) );
 	
 		/*** Sino hay ningun error*/
 		if ($ejecutarConsulta) {

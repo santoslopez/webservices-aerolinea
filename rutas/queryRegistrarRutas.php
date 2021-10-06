@@ -46,19 +46,29 @@
 
 	if (pg_num_rows($ejecutarConsultaVerificarRuta)) {
 		echo "<script>
-		alert ('No se guardaron los datos estan en uso');
-		</script>";   
+		Swal.fire({
+			icon: 'error',
+			title: 'Datos no guardados',
+			text: 'Los datos ESTAN EN uso',
+			footer: '<a>Error los datos no se guardaron.</a>'
+	  }).then(function() {
+		window.location = '../index.php';
+	});
+	  
+	  </script>";
 
 	}else {
 
-		$consulta  = sprintf("INSERT INTO Rutas(numeroVuelo,tiempoVuelo,horaSalida,distancia,aeropuertoOrigen,aeropuertoDestino) VALUES('%s','%s','%s','%s','%s','%s');",
-		pg_escape_string($numeroVuelo),
-		pg_escape_string($tiempoVuelo),
-		pg_escape_string($horaSalida),
-		pg_escape_string($distancia),
-		pg_escape_string($aeropuertoOrigen),
-		pg_escape_string($aeropuertoDestino));
-		$ejecutarConsulta = pg_query($conexion, $consulta);
+		$consulta = "INSERT INTO Rutas(numeroVuelo,tiempoVuelo,horaSalida,distancia,aeropuertoOrigen,aeropuertoDestino) VALUES ($1,$2,$3,$4,$5,$6)";
+		pg_prepare($conexion,"prepareInsertarRutas",$consulta) or die("Cannot prepare statement .");
+	
+		$ejecutarConsulta= pg_execute($conexion,"prepareInsertarRutas",
+		array(
+			htmlspecialchars($numeroVuelo),htmlspecialchars($tiempoVuelo),
+			htmlspecialchars($horaSalida),htmlspecialchars($distancia),htmlspecialchars($aeropuertoOrigen),
+			htmlspecialchars($aeropuertoDestino),
+		) );
+
 	
 		/*** Sino hay ningun error*/
 		if ($ejecutarConsulta) {

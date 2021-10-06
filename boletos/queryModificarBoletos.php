@@ -31,7 +31,11 @@
 
     pg_prepare($conexion,"prepareModificarBoletos",$consultaModificarBoletos) or die("Cannot prepare statement.");
   
-    $resultado = pg_execute($conexion,"prepareModificarBoletos",array($nombre, $fila, $posicion, $codigo, $numero));
+    $resultado = pg_execute($conexion,"prepareModificarBoletos",array(htmlspecialchars($nombre), 
+    htmlspecialchars($fila),
+    htmlspecialchars($posicion),
+    htmlspecialchars($codigo),
+    htmlspecialchars($numero)));
     
     if ($resultado) {
 			echo "<script>

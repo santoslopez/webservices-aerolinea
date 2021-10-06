@@ -33,28 +33,18 @@
 		header('Location: ../index.php');
 		//exit('Por favor ingresa el nombre de usuario y password.');
 	}else {
-	/*** Verificamos que el idioma a registrar no este registrado, si lo esta no se guardan los datos.*/
-	/*$verificarLenguas = "SELECT * FROM Empleados WHERE nombreIdioma=$1";
-	
-	pg_prepare($conexion,"prepareVerificarIdiomasDomina",$verificarLenguas) or die("Cannot prepare statement.");
-	
-	$ejecutarConsultaVerificarLenguas = pg_execute($conexion,"prepareVerificarIdiomasDomina",array($datosLenguasRegistro));
 
-	if (pg_num_rows($ejecutarConsultaVerificarLenguas)) {
-        alert("El idioma esta en uso");
-		
-	}else {*/
-
-		$consulta  = sprintf("INSERT INTO Empleados(nombreDatos,puesto,horasDeVuelo,contactoDeEmergencia,tiempoEnEmpresa,nacionalidad) VALUES('%s','%s','%s','%s','%s','%s');",
-		pg_escape_string($datosNombreApellidos),
-		pg_escape_string($datosPuesto),
-		pg_escape_string($datosHorasVuelo),
-		pg_escape_string($datosContactosEmergencia),
-		pg_escape_string($datosTiempoEnEmpresa),
-		pg_escape_string($datosNacionalidadEmpleado)
+		$consulta = "INSERT INTO Empleados(nombreDatos,puesto,horasDeVuelo,contactoDeEmergencia,tiempoEnEmpresa,nacionalidad) VALUES ($1,$2,$3,$4,$5,$6)";
+		pg_prepare($conexion,"prepareInsertarEmpleados",$consulta) or die("Cannot prepare statement .");
 	
-		);
-		$ejecutarConsulta = pg_query($conexion, $consulta);
+		$ejecutarConsulta= pg_execute($conexion,"prepareInsertarEmpleados",
+		array(
+			htmlspecialchars($datosNombreApellidos),htmlspecialchars($datosPuesto),
+			htmlspecialchars($datosHorasVuelo),htmlspecialchars($datosContactosEmergencia),
+			htmlspecialchars($datosTiempoEnEmpresa),
+			htmlspecialchars($datosNacionalidadEmpleado)
+		) );
+
 	
 		/*** Sino hay ningun error*/
 		if ($ejecutarConsulta) {

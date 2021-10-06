@@ -35,7 +35,8 @@
 
     pg_prepare($conexion,"prepareModificarIdiomasDomina",$consultaModificarLenguas) or die("Cannot prepare statement.");
   
-    $res = pg_execute($conexion,"prepareModificarIdiomasDomina",array($obtenerNombreIdioma,$obtenerCodigoIdioma));
+    $res = pg_execute($conexion,"prepareModificarIdiomasDomina",array(
+      htmlspecialchars($obtenerNombreIdioma),htmlspecialchars($obtenerCodigoIdioma)));
     
     if ($res) {
 			echo "<script>

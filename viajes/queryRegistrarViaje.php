@@ -38,18 +38,26 @@
 	$ejecutarConsultaVerificarViaje = pg_execute($conexion,"prepareVerificarViaje",array( $fecha, $numeroVuelo, $matricula));
 
 	if (pg_num_rows($ejecutarConsultaVerificarViaje)) {
-        alert("El Vuelo ya ha sido programado");
+        echo "<script>
+			Swal.fire({
+				icon: 'error',
+				title: 'Datos no guardados',
+				text: 'El vuelo ya esta programado.',
+				footer: '<a>Error los datos no se guardaron.</a>'
+		  }).then(function() {
+			window.location = '../index.php';
+		});
+		  </script>";
 	}else {
 
-		$consulta  = sprintf("INSERT INTO Viaje (precio, fecha, numeroVuelo, matricula) VALUES('%s','%s','%s','%s');",
-		pg_escape_string($precio),
-		pg_escape_string($fecha),
-		pg_escape_string($numeroVuelo),
-		pg_escape_string($matricula)
-
-		);
-
-		$ejecutarConsulta = pg_query($conexion, $consulta);
+		$consulta = "INSERT INTO Viaje (precio, fecha, numeroVuelo, matricula) VALUES ($1,$2,$3,$4)";
+		pg_prepare($conexion,"prepareInsertarViaje",$consulta) or die("Cannot prepare statement .");
+	
+		$ejecutarConsulta = pg_execute($conexion,"prepareInsertarViaje",
+		array(
+			htmlspecialchars($precio),htmlspecialchars($fecha),
+			htmlspecialchars($numeroVuelo),htmlspecialchars($matricula)
+		) );
 	
 		/*** Sino hay ningun error*/
 		if ($ejecutarConsulta) {
