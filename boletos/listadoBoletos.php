@@ -20,7 +20,9 @@
             echo "<div class='alert alert-danger' role='alert'>
                     No hay información de boletos.
                   </div>
-                  <a href='boletos/formularioRegistrarBoletos.php'>Registrar boleto</a>";
+
+                  <a href='boletos/formularioRegistrarBoletos.php'><img src='img/boleto.png' alt='HTML tutorial' style='width:15%;height:15%;'>Registrar boletos</a>";
+
         }else {
             # code...
 
@@ -56,7 +58,7 @@
     }
     echo "</tbody>
     </table>
-    <a href='boletos/formularioRegistrarBoletos.php'>Registrar boleto</a>";
+    <a href='boletos/formularioRegistrarBoletos.php'><img src='img/boleto.png' alt='HTML tutorial' style='width:15%;height:15%;'>Registrar boletos</a>";
 
 
         }

@@ -187,10 +187,9 @@
                     </span>
                 </a>
 
-
                 
                 <div  class="nav nav-tabs nav__list" id="nav-tab" role="tablist">
-
+                    <img src="img/fly.png" alt="Aeropuerto" style="width:35%;height:25%;display:block;margin:auto;">
                     <!-- Acerca -->
                     <a class="nav-link" id="acerca-tab" data-toggle="pill"  href="#acerca"  role="tab" aria-controls="acerca" aria-selected="true" aria-label="Home">
                         <i class='bx bx-info-circle nav__icon'></i>

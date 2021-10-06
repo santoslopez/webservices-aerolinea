@@ -14,7 +14,10 @@
         echo "<div class='alert alert-danger' role='alert' >
                 No hay información de empleados
               </div>
-              <a href='empleados/formularioRegistrarEmpleados.php'>Registrar empleados</a>";
+
+          <a href='empleados/formularioRegistrarEmpleados.php'><img src='img/recepcionist.png' alt='HTML tutorial' style='width:15%;height:15%;'>
+              Registrar empleados</a>";
+
     }else{
         
                                         
@@ -59,7 +62,10 @@
     }
     echo "</tbody>
     </table>
-    <a href='empleados/formularioRegistrarEmpleados.php'>Registrar empleados</a>";        
+
+    <a href='empleados/formularioRegistrarEmpleados.php'><img src='img/recepcionist.png' alt='HTML tutorial' style='width:15%;height:15%;'>
+    Registrar empleados</a>";
+
     }
     pg_close($conexion);
 

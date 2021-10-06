@@ -17,7 +17,8 @@
         echo "<div class='alert alert-danger' role='alert'>
                 No hay información de aeropuertos.
               </div>
-              <a href='aeropuerto/formularioRegistrarAeropuerto.php'>Registrar aeropuerto</a>";
+              <a href='aeropuerto/formularioRegistrarAeropuerto.php'><img src='img/airport3.png' alt='HTML tutorial' style='width:15%;height:15%;'>Registrar aeropuerto</a>";
+    
     }else{
         
                                         
@@ -51,7 +52,7 @@
     }
     echo "</tbody>
     </table>
-    <a href='aeropuerto/formularioRegistrarAeropuerto.php'>Registrar aeropuerto</a>";
+    <a href='aeropuerto/formularioRegistrarAeropuerto.php'><img src='img/airport3.png' alt='HTML tutorial' style='width:15%;height:15%;'>Registrar aeropuerto</a>";
     
     }
     pg_close($conexion);

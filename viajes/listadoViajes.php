@@ -84,7 +84,9 @@
             }
             echo "</tbody>
             </table>
-            <a href='viajes/formularioRegistrarViaje.php'>Registrar Viaje</a>";
+            <a href='viajes/formularioRegistrarViaje.php'><img src='img/viajero.png' alt='HTML tutorial' style='width:15%;height:15%;'>Registrar viaje</a>";
+
+
         }    
     }
     pg_close($conexion);

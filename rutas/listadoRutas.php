@@ -10,7 +10,7 @@
         echo "<div class='alert alert-danger' role='alert'>
                 No hay información de aeropuertos registrados.
               </div>
-              <a href='aeropuerto/formularioRegistrarAeropuerto.php'>Registrar aeropuerto</a>";
+              <a href='aeropuerto/formularioRegistrarAeropuerto.php'><img src='img/airoport2.png' alt='HTML tutorial' style='width:15%;height:15%;'>Registrar aeropuerto</a>";
     }else{
         $listadoRutas= "SELECT numeroVuelo,tiempoVuelo,horaSalida,distancia,aeropuertoOrigen,aeropuertoDestino FROM Rutas ORDER BY numeroVuelo";
         $ejecutarConsultaObtenerInfo = pg_query($conexion,$listadoRutas);
@@ -20,7 +20,7 @@
             echo "<div class='alert alert-danger' role='alert'>
                     No hay información de rutas.
                   </div>
-                  <a href='rutas/formularioRegistrarRutas.php'>Registrar rutas</a>";
+                  <a href='aeropuerto/formularioRegistrarRutas.php'><img src='img/pin.png' alt='HTML tutorial' style='width:15%;height:15%;'>Registrar rutas</a>";
         }else{             
             
 
@@ -65,7 +65,7 @@
             }
             echo "</tbody>
             </table>
-            <a href='rutas/formularioRegistrarRutas.php'>Registrar rutas</a>";
+            <a href='aeropuerto/formularioRegistrarRutas.php'><img src='img/pin.png' alt='HTML tutorial' style='width:15%;height:15%;'>Registrar rutas</a>";
 
         }    
     }

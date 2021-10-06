@@ -10,7 +10,8 @@
         echo "<div class='alert alert-danger' role='alert'>
                 No hay información de idiomas registrados.
               </div>
-              <a href='idiomas/formularioIdiomas.php'>Registrar idiomas domina</a>";
+              <a href='idiomas/formularioIdiomas.php'><img src='img/belgium.png' alt='HTML tutorial' style='width:15%;height:15%;'>Registrar idiomas</a>";
+
     }else{
         
                                         
@@ -41,7 +42,7 @@
     }
     echo "</tbody>
     </table>
-    <a href='idiomas/formularioIdiomas.php'>Registrar idioma</a>";      
+    <a href='idiomas/formularioIdiomas.php'><img src='img/belgium.png' alt='HTML tutorial' style='width:15%;height:15%;'>Registrar idiomas</a>";
     
     
     }

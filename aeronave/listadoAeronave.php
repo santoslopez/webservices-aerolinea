@@ -10,7 +10,9 @@
         echo "<div class='alert alert-danger' role='alert'>
                 No hay información de aerolineas.
               </div>
-              <a href='aeronave/formularioRegistrarAeronave.php'>Registrar aeronave</a>";
+              <a href='aeronave/formularioRegistrarAeronave.php'><img src='img/flete-aereo.png' alt='HTML tutorial' style='width:15%;height:15%;'>Registrar aeronave</a>";
+
+
     }else{
         
                                         
@@ -46,7 +48,9 @@
     }
     echo "</tbody>
     </table>
-    <a href='aeronave/formularioRegistrarAeronave.php'>Registrar Aeronave</a>";
+    <a href='aeronave/formularioRegistrarAeronave.php'><img src='img/flete-aereo.png' alt='HTML tutorial' style='width:15%;height:15%;'>Registrar aeronave</a>";
+
+
     }
 
     pg_close($conexion);
