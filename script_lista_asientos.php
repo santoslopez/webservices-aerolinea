@@ -3,7 +3,7 @@
 include '../aerolineacc6/conexion/conexion.php';
 include '../aerolineacc6/aerolinea/aerolinea.php';
 
-$aerolineaA = $_GET['aerolinea'];
+$aerolineaA = $_GET['aerolina'];
 $vuelo = $_GET['vuelo'];
 $fechaA = $_GET['fecha'];
 $formatoResultado = $_GET['formato'];
@@ -44,10 +44,11 @@ function resultadosJSON($ejecutarConsultaObtenerInfo,$consultaInfoVuelos, $aerol
             $destino = $row[3];
             $marca= $row[4];
             $modelo = $row[5];
-    
+            
             if (!(pg_num_rows($consultaInfoVuelos))) {
                 //echo json_encode('');
             }else{
+                // son los asientos que estoy recibiendo OCUPADOS
                 while ($row = pg_fetch_row($consultaInfoVuelos)) {
                     $asiento = array(
                         'fila' => $row[0],
@@ -57,12 +58,12 @@ function resultadosJSON($ejecutarConsultaObtenerInfo,$consultaInfoVuelos, $aerol
                 }
             } 
         } 
-        
+        // arreglo donde agrego TODOS los asietos
         $arrayposiciones = ['A', 'B','C','D'];
         $contfilas = 1;
         $asientosaux= array();
         $disponibles = array();
-
+        /* 20 TIENE QUE SER EL VALOR  */
         while( $contfilas <= 20){   
             $contcol = 0;
             while($contcol < 4){
@@ -81,13 +82,16 @@ function resultadosJSON($ejecutarConsultaObtenerInfo,$consultaInfoVuelos, $aerol
         $contpersonas = 0;
         $contasientos = 0;
 
+        //compara los dos arreglos disponibles y TODOS
         while($contasientos < count($asientosaux)){
             //echo $contasientos."\n";
             
             if(($asientosaux[$contasientos] == $asientos[$contpersonas]) AND ($contpersonas < count($asientos))){
                 //echo "ocupado\n";
+                //como bloquear un boton disable
                 $contpersonas++;
             }else{
+                // dejar el boton normal 
                 array_push($disponibles, $asientosaux[$contasientos]);
             }
             $contasientos++;
@@ -146,7 +150,7 @@ function resultadosXML($ejecutarConsultaObtenerInfo,$consultaInfoVuelos, $aeroli
         $asientosaux= array();
         $disponibles = array();
 
-        while( $contfilas <= 20){   
+        while($contfilas <= 20){   
             $contcol = 0;
             while($contcol < 4){
                 $asientoA = array(
