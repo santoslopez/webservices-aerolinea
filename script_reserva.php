@@ -27,7 +27,8 @@ if(strlen($asiento) == 3){
 
 $consultaAsientoOcupado = " SELECT V.codigoViaje, V.numeroVuelo, V.fecha, B.fila, B.posicion, B.nombrePasajero
                             FROM Boletos AS B, Viaje AS V
-                            WHERE B.codigoViaje = V.codigoViaje AND V.numeroVuelo = $vuelo AND V.fecha = '$fechaIng' AND B.fila = $filaA AND B.posicion = '$posicionA' AND B.nombrePasajero = '$nombre' ";
+                            WHERE B.codigoViaje = V.codigoViaje AND V.numeroVuelo = $vuelo AND V.fecha = '$fechaIng' AND B.fila = $filaA AND B.posicion = '$posicionA' AND B.nombrePasajero = '$nombre' 
+                            ORDER BY B.fila, B.posicion ";
 
 $consultaCodigoViaje = "SELECT DISTINCT V.codigoViaje
                         FROM Viaje AS V, Rutas AS R
@@ -61,7 +62,8 @@ function resultadosJSON($ejecutarConsultaAsientoOcupado, $ejecutarConsultaCodigo
             if ($ejecutarConsulta) {
                 $consultaAsientoOcupado2 = " SELECT V.numeroVuelo, V.fecha, R.horaSalida, B.numeroBoleto
                             FROM Boletos AS B, Viaje AS V, Rutas AS R
-                            WHERE B.codigoViaje = V.codigoViaje AND R.numeroVuelo = V.numeroVuelo AND V.numeroVuelo = $vuelo AND V.fecha = '$fechaIng' AND B.fila = $filaA AND B.posicion = '$posicionA' AND B.nombrePasajero = '$nombre' ";
+                            WHERE B.codigoViaje = V.codigoViaje AND R.numeroVuelo = V.numeroVuelo AND V.numeroVuelo = $vuelo AND V.fecha = '$fechaIng' AND B.fila = $filaA AND B.posicion = '$posicionA' AND B.nombrePasajero = '$nombre'
+                            ORDER BY B.fila, B.posicion ";
 
                 $ejecutarConsultaAsientoOcupado2 = pg_query($conexion, $consultaAsientoOcupado2);
 
@@ -117,7 +119,8 @@ function resultadosXML($ejecutarConsultaAsientoOcupado, $ejecutarConsultaCodigoV
 
                 $consultaAsientoOcupado2 = " SELECT V.numeroVuelo, V.fecha, R.horaSalida, B.numeroBoleto
                             FROM Boletos AS B, Viaje AS V, Rutas AS R
-                            WHERE B.codigoViaje = V.codigoViaje AND R.numeroVuelo = V.numeroVuelo AND V.numeroVuelo = $vuelo AND V.fecha = '$fechaIng' AND B.fila = $filaA AND B.posicion = '$posicionA' AND B.nombrePasajero = '$nombre' ";
+                            WHERE B.codigoViaje = V.codigoViaje AND R.numeroVuelo = V.numeroVuelo AND V.numeroVuelo = $vuelo AND V.fecha = '$fechaIng' AND B.fila = $filaA AND B.posicion = '$posicionA' AND B.nombrePasajero = '$nombre' 
+                            ORDER BY B.fila, B.posicion";
 
                 $ejecutarConsultaAsientoOcupado2 = pg_query($conexion, $consultaAsientoOcupado2);
 

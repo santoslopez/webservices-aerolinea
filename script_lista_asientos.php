@@ -22,7 +22,7 @@ $listadoVuelos ="SELECT DISTINCT V.numeroVuelo, V.fecha, R.aeropuertoOrigen, R.a
 
 $infoVuelos  = "SELECT B.fila, B.posicion
                 FROM Viaje AS V, Rutas AS R, Boletos AS B
-                WHERE V.codigoViaje = B.codigoViaje AND V.numeroVuelo = R.numeroVuelo AND V.numeroVuelo = R.numeroVuelo AND V.numeroVuelo = $vuelo ORDER BY B.fila";
+                WHERE V.codigoViaje = B.codigoViaje AND V.numeroVuelo = R.numeroVuelo AND V.numeroVuelo = R.numeroVuelo AND V.numeroVuelo = $vuelo ORDER BY B.fila, B.posicion ";
 
 
 $ejecutarConsultaObtenerInfo = pg_query($conexion,$listadoVuelos);
