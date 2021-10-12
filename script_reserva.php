@@ -3,11 +3,11 @@
 include '../aerolineacc6/conexion/conexion.php';
 include '../aerolineacc6/aerolinea/aerolinea.php';
 
-$aerolineaA = $_GET['aerolinea'];
+$aerolineaA = $_GET['aerolina'];
 $asiento = $_GET['asiento'];
 $vuelo = $_GET['vuelo'];
 $fechaA = $_GET['fecha'];
-$nombre = $_GET['nombre']; 
+$nombre = $_GET['nombre'];
 
 $formatoResultado = $_GET['formato'];
 
